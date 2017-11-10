@@ -37,49 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- start-smoth-scrolling -->
 </head>
 <body>
-<!-- banner -->
-<div class="banner page-head">
-	<div class="container">
-		<div class="header-nav">
-			<div class="logo">
-				<h1><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a></h1>
-			</div>
-			<div class="navigation">
-				<span class="menu"><img src="images/menu.png" alt=""/></span>
-				<nav class="cl-effect-11" id="cl-effect-11">
-					<ul class="nav1">
-						<li><a href="index.html" data-hover="HOME">HOME</a></li>
-						<li><a href="about.html" data-hover="ABOUT">ABOUT</a></li>
-						<li><a href="typography.html" data-hover="SERVICES">SERVICES</a></li>
-						<li><a href="booking.html" data-hover="BOOKING">BOOKING</a></li>
-						<li><a class="active" href="contact.html" data-hover="CONTACT">CONTACT</a></li>
-					</ul>
-				</nav>
-				<!-- script for menu -->
-					<script> 
-						$( "span.menu" ).click(function() {
-						$( "ul.nav1" ).slideToggle( 300, function() {
-						 // Animation complete.
-						});
-						});
-					</script>
-				<!-- //script for menu -->
-				
-			</div>
-			<div class="social-icons">
-				<ul>
-					<li><a href="#" class="f1"></a></li>
-					<li><a href="#" class="f2"></a></li>
-					<li><a href="#" class="f3"></a></li>
-					<li><a href="#" class="f4"></a></li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
-<!-- //banner -->
-<!--contact-->
+<?php include 'menu.php';?><!--contact-->
 <div class="contact">
 	<div class="container">
 		<h2 class="tittle-one">VIEW ON MAP</h2>
@@ -119,11 +77,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>NAVIGATION</h3>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="typography.html">Services</a></li>						
-					<li><a href="booking.html">Booking</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="typography.php">Services</a></li>						
+					<li><a href="booking.php">Booking</a></li>
+					<li><a href="contact.php">Contact</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">
@@ -144,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>

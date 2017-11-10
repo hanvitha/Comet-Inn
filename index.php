@@ -72,7 +72,7 @@ require_once('config.php');
 			</div>
 		</div>
 		<div class="search">
-				<form action="search.html">
+				<form action="search.php">
 					<input type="submit" value="search">
 				</form>	
 		</div>
@@ -410,10 +410,10 @@ veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 			<h3>NAVIGATION</h3>
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="typography.html">Services</a></li>						
-				<li><a href="booking.html">Booking</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="about.php">About</a></li>
+				<li><a href="typography.php">Services</a></li>						
+				<li><a href="booking.php">Booking</a></li>
+				<li><a href="contact.php">Contact</a></li>
 			</ul>
 		</div>
 		<div class="col-md-3 ftr_navi ftr">
@@ -434,7 +434,7 @@ veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 			</ul>
 		</div>
 		<div class="col-md-3 ftr-logo">
-			<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+			<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
 			<ul>
 				<li><a href="#" class="f1"> </a></li>
 				<li><a href="#" class="f2"> </a></li>

@@ -38,48 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- start-smoth-scrolling -->
 </head>
 <body>
-<!-- banner -->
-<div class="banner page-head">
-	<div class="container">
-		<div class="header-nav">
-			<div class="logo">
-				<h1><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a></h1>
-			</div>
-			<div class="navigation">
-				<span class="menu"><img src="images/menu.png" alt=""/></span>
-				<nav class="cl-effect-11" id="cl-effect-11">
-					<ul class="nav1">
-						<li><a href="index.html" data-hover="HOME">HOME</a></li>
-						<li><a href="about.html" data-hover="ABOUT">ABOUT</a></li>
-						<li><a href="typography.html" data-hover="SERVICES">SERVICES</a></li>
-						<li><a href="booking.html" data-hover="BOOKING">BOOKING</a></li>
-						<li><a href="contact.html" data-hover="CONTACT">CONTACT</a></li>
-					</ul>
-				</nav>
-				<!-- script for menu -->
-					<script> 
-						$( "span.menu" ).click(function() {
-						$( "ul.nav1" ).slideToggle( 300, function() {
-						 // Animation complete.
-						});
-						});
-					</script>
-				<!-- //script for menu -->
-				
-			</div>
-			<div class="social-icons">
-				<ul>
-					<li><a href="#" class="f1"></a></li>
-					<li><a href="#" class="f2"></a></li>
-					<li><a href="#" class="f3"></a></li>
-					<li><a href="#" class="f4"></a></li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
-<!-- //banner -->
+<?php include 'menu.php';?>
 <!--search-->
 <div class="search-page">
 	<div class="container">	
@@ -247,11 +206,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-9 search-grid-right">
 				<div class="hotel-rooms">
 					<div class="hotel-left">
-						<a href="single.html"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand Park Hyatt</a>
+						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand Park Hyatt</a>
 						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
 						<div class="hotel-left-grids">
 							<div class="hotel-left-one">
-								<a href="single.html"><img src="images/21.jpg" alt="" /></a>
+								<a href="single.php"><img src="images/21.jpg" alt="" /></a>
 							</div>
 							<div class="hotel-left-two">
 								<div class="rating text-left">
@@ -261,7 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>☆</span>
 									<span>☆</span>
 								</div>
-								<a href="single.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
+								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
 								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
 							</div>
 							<div class="clearfix"></div>
@@ -270,17 +229,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="hotel-right text-right">
 						<h4><span>$8,750</span> $4,850</h4>
 						<p>Best price</p>
-						<a href="single.html">Continue</a>
+						<a href="single.php">Continue</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="hotel-rooms">
 					<div class="hotel-left">
-						<a href="single.html"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Royal Taj Coromandel</a>
+						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Royal Taj Coromandel</a>
 						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
 						<div class="hotel-left-grids">
 							<div class="hotel-left-one">
-								<a href="single.html"><img src="images/22.jpg" alt="" /></a>
+								<a href="single.php"><img src="images/22.jpg" alt="" /></a>
 							</div>
 							<div class="hotel-left-two">
 								<div class="rating text-left">
@@ -290,7 +249,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>☆</span>
 									<span>☆</span>
 								</div>
-								<a href="single.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
+								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
 								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
 							</div>
 							<div class="clearfix"></div>
@@ -299,17 +258,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="hotel-right text-right">
 						<h4><span>$3,350</span> $1,450</h4>
 						<p>Best price</p>
-						<a href="single.html">Continue</a>
+						<a href="single.php">Continue</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="hotel-rooms">
 					<div class="hotel-left">
-						<a href="single.html"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Crowne Plaza</a>
+						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Crowne Plaza</a>
 						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
 						<div class="hotel-left-grids">
 							<div class="hotel-left-one">
-								<a href="single.html"><img src="images/23.jpg" alt="" /></a>
+								<a href="single.php"><img src="images/23.jpg" alt="" /></a>
 							</div>
 							<div class="hotel-left-two">
 								<div class="rating text-left">
@@ -319,7 +278,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>☆</span>
 									<span>☆</span>
 								</div>
-								<a href="single.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
+								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
 								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
 							</div>
 							<div class="clearfix"></div>
@@ -328,17 +287,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="hotel-right text-right">
 						<h4><span>$9,750</span> $5,700</h4>
 						<p>Best price</p>
-						<a href="single.html">Continue</a>
+						<a href="single.php">Continue</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="hotel-rooms">
 					<div class="hotel-left">
-						<a href="single.html"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Modern Hilton Park</a>
+						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Modern Hilton Park</a>
 						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
 						<div class="hotel-left-grids">
 							<div class="hotel-left-one">
-								<a href="single.html"><img src="images/24.jpg" alt="" /></a>
+								<a href="single.php"><img src="images/24.jpg" alt="" /></a>
 							</div>
 							<div class="hotel-left-two">
 								<div class="rating text-left">
@@ -348,7 +307,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>☆</span>
 									<span>☆</span>
 								</div>
-								<a href="single.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
+								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
 								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
 							</div>
 							<div class="clearfix"></div>
@@ -357,17 +316,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="hotel-right text-right">
 						<h4><span>$9,750</span> $6,800</h4>
 						<p>Best price</p>
-						<a href="single.html">Continue</a>
+						<a href="single.php">Continue</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="hotel-rooms">
 					<div class="hotel-left">
-						<a href="single.html"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand park Hotel</a>
+						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand park Hotel</a>
 						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
 						<div class="hotel-left-grids">
 							<div class="hotel-left-one">
-								<a href="single.html"><img src="images/25.jpg" alt="" /></a>
+								<a href="single.php"><img src="images/25.jpg" alt="" /></a>
 							</div>
 							<div class="hotel-left-two">
 								<div class="rating text-left">
@@ -377,7 +336,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>☆</span>
 									<span>☆</span>
 								</div>
-								<a href="single.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
+								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
 								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
 							</div>
 							<div class="clearfix"></div>
@@ -386,17 +345,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="hotel-right text-right">
 						<h4><span>$8,750</span> $4,850</h4>
 						<p>Best price</p>
-						<a href="single.html">Continue</a>
+						<a href="single.php">Continue</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="hotel-rooms">
 					<div class="hotel-left">
-						<a href="single.html"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Royal Park Hyatt</a>
+						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Royal Park Hyatt</a>
 						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
 						<div class="hotel-left-grids">
 							<div class="hotel-left-one">
-								<a href="single.html"><img src="images/26.jpg" alt="" /></a>
+								<a href="single.php"><img src="images/26.jpg" alt="" /></a>
 							</div>
 							<div class="hotel-left-two">
 								<div class="rating text-left">
@@ -406,7 +365,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>☆</span>
 									<span>☆</span>
 								</div>
-								<a href="single.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
+								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
 								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
 							</div>
 							<div class="clearfix"></div>
@@ -415,7 +374,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="hotel-right text-right">
 						<h4><span>$4,650</span> $2,650</h4>
 						<p>Best price</p>
-						<a href="single.html">Continue</a>
+						<a href="single.php">Continue</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -431,11 +390,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>NAVIGATION</h3>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="typography.html">Services</a></li>						
-					<li><a href="booking.html">Booking</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="typography.php">Services</a></li>						
+					<li><a href="booking.php">Booking</a></li>
+					<li><a href="contact.php">Contact</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">
@@ -456,7 +415,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>

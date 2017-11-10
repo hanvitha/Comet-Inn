@@ -42,17 +42,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="header-nav">
 			<div class="logo">
-				<h1><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a></h1>
+				<h1><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a></h1>
 			</div>
 			<div class="navigation">
 				<span class="menu"><img src="images/menu.png" alt=""/></span>
 				<nav class="cl-effect-11" id="cl-effect-11">
 					<ul class="nav1">
-						<li><a href="index.html" data-hover="HOME">HOME</a></li>
-						<li><a href="about.html" data-hover="ABOUT">ABOUT</a></li>
-						<li><a href="typography.html" data-hover="SERVICES">SERVICES</a></li>
-						<li><a href="booking.html" data-hover="BOOKING">BOOKING</a></li>
-						<li><a href="contact.html" data-hover="CONTACT">CONTACT</a></li>
+						<li><a href="index.php" data-hover="HOME">HOME</a></li>
+						<li><a href="about.php" data-hover="ABOUT">ABOUT</a></li>
+						<li><a href="typography.php" data-hover="SERVICES">SERVICES</a></li>
+						<li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
+						<li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
 					</ul>
 				</nav>
 				<!-- script for menu -->
@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="single-pg-hdr">
 				<h2><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand Park Hyatt</h2>
 				<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-				<p>Jump to: <a href="single.html">Over View</a>|<a href="single.html">Room Choices</a>|<a href="single.html">Hotel Information</a></p>
+				<p>Jump to: <a href="single.php">Over View</a>|<a href="single.php">Room Choices</a>|<a href="single.php">Hotel Information</a></p>
 			</div>
 			<div class="flexslider">
 							<ul class="slides">
@@ -179,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="sp-bor-btn text-right">
 					<h4><span>$8,750</span> $4,850</h4>
 					<p class="best-pri">Best price</p>
-					<a class="best-btn" href="booking.html">Book Now</a>
+					<a class="best-btn" href="booking.php">Book Now</a>
 				</div>
 			</div>
 			<div class="map-gd">
@@ -215,11 +215,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>NAVIGATION</h3>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="typography.html">Services</a></li>					
-					<li><a href="booking.html">Booking</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="typography.php">Services</a></li>					
+					<li><a href="booking.php">Booking</a></li>
+					<li><a href="contact.php">Contact</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">
@@ -240,7 +240,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>

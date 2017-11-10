@@ -68,7 +68,7 @@
 				$('#'+settings.linksContainer).append('<li><a href="#" id="Choco_numsetIndex_'+settings.setIndex+'" class="Choco_link">'+settings.setTitle+'</a></li>');
 				e = this.parent();
 				$(this).remove();
-				if($.trim(e.html()) == ""){//If parent empty : remove it
+				if($.trim(e.php()) == ""){//If parent empty : remove it
 					e.remove();
 				}
 				return $('#Choco_numsetIndex_'+settings.setIndex).unbind('click').bind('click', {id: settings.setIndex, nom : settings.setTitle, i : settings.currentImage}, _initialise);
@@ -232,8 +232,8 @@
 		function upadteDescription(){
 			var current = settings.currentImage + 1;
 			var last = settings.lastImage + 1;
-			$('#Choco_container_title').html(images[settings.setIndex][settings.currentImage]['caption']);
-			$('#Choco_container_via').html(settings.setTitle+settings.separator1+current +settings.separator2+last);
+			$('#Choco_container_title').php(images[settings.setIndex][settings.currentImage]['caption']);
+			$('#Choco_container_via').php(settings.setTitle+settings.separator1+current +settings.separator2+last);
 		}
 		function isSet(variable,defaultValue){
 			// return variable === undefined ? defaultValue : variable; ?

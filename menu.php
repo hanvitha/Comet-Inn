@@ -50,10 +50,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <nav class="cl-effect-11" id="cl-effect-11">
                     <ul class="nav1">
                         <li><a href="index.php" data-hover="HOME">HOME</a></li>
-                        <li><a href="about.html" data-hover="ABOUT">ABOUT</a></li>
-                        <li><a href="typography.html" data-hover="SERVICES">SERVICES</a></li>
-                        <li><a href="booking.html" data-hover="BOOKING">BOOKING</a></li>
-                        <li><a href="contact.html" data-hover="CONTACT">CONTACT</a></li>
+                        <li><a href="about.php" data-hover="ABOUT">ABOUT</a></li>
+                        <li><a href="typography.php" data-hover="SERVICES">SERVICES</a></li>
+                        <li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
+                        <li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
                         <?php
                         if(!$user){?>
                             <li><a href="adminmenu.php" data-hover="ADMIN">ADMIN</a></li>

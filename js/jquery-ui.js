@@ -6877,7 +6877,7 @@ $.widget( "ui.button", {
 			focusClass = "ui-state-focus";
 
 		if ( options.label === null ) {
-			options.label = (this.type === "input" ? this.buttonElement.val() : this.buttonElement.html());
+			options.label = (this.type === "input" ? this.buttonElement.val() : this.buttonElement.php());
 		}
 
 		this._hoverable( this.buttonElement );
@@ -7065,7 +7065,7 @@ $.widget( "ui.button", {
 			.removeClass( baseClasses + " " + stateClasses + " " + typeClasses )
 			.removeAttr( "role" )
 			.removeAttr( "aria-pressed" )
-			.html( this.buttonElement.find(".ui-button-text").html() );
+			.php( this.buttonElement.find(".ui-button-text").php() );
 
 		if ( !this.hasTitle ) {
 			this.buttonElement.removeAttr( "title" );
@@ -7127,7 +7127,7 @@ $.widget( "ui.button", {
 		var buttonElement = this.buttonElement.removeClass( typeClasses ),
 			buttonText = $( "<span></span>", this.document[0] )
 				.addClass( "ui-button-text" )
-				.html( this.options.label )
+				.php( this.options.label )
 				.appendTo( buttonElement.empty() )
 				.text(),
 			icons = this.options.icons,
@@ -8109,7 +8109,7 @@ $.extend(Datepicker.prototype, {
 			return;
 		}
 		var inst = this._getInst(target[0]);
-		inst.selectedDay = inst.currentDay = $('a', td).html();
+		inst.selectedDay = inst.currentDay = $('a', td).php();
 		inst.selectedMonth = inst.currentMonth = month;
 		inst.selectedYear = inst.currentYear = year;
 		this._selectDate(id, this._formatDate(inst,
@@ -9184,7 +9184,7 @@ $.widget("ui.dialog", {
 			uiDialogTitle = $( "<span>" )
 				.uniqueId()
 				.addClass( "ui-dialog-title" )
-				.html( title )
+				.php( title )
 				.prependTo( uiDialogTitlebar );
 
 			uiDialogButtonPane = ( this.uiDialogButtonPane = $( "<div>" ) )
@@ -9652,7 +9652,7 @@ $.widget("ui.dialog", {
 			case "title":
 				// convert whatever was passed in o a string, for html() to not throw up
 				$( ".ui-dialog-title", this.uiDialogTitlebar )
-					.html( "" + ( value || "&#160;" ) );
+					.php( "" + ( value || "&#160;" ) );
 				break;
 		}
 
@@ -13971,7 +13971,7 @@ $.widget( "ui.tabs", {
 					// support: jQuery <1.8
 					// http://bugs.jquery.com/ticket/11778
 					setTimeout(function() {
-						panel.html( response );
+						panel.php( response );
 						that._trigger( "load", event, eventData );
 					}, 1 );
 				})
@@ -14120,10 +14120,10 @@ if ( $.uiBackCompat !== false ) {
 					}
 
 					var span = ui.tab.find( "span" ),
-						html = span.html();
-					span.html( this.options.spinner );
+						html = span.php();
+					span.php( this.options.spinner );
 					ui.jqXHR.complete(function() {
-						span.html( html );
+						span.php( html );
 					});
 				}
 			});
@@ -14733,7 +14733,7 @@ $.widget( "ui.tooltip", {
 		// exists, then just update the content and bail.
 		tooltip = this._find( target );
 		if ( tooltip.length ) {
-			tooltip.find( ".ui-tooltip-content" ).html( content );
+			tooltip.find( ".ui-tooltip-content" ).php( content );
 			return;
 		}
 
@@ -14754,7 +14754,7 @@ $.widget( "ui.tooltip", {
 
 		tooltip = this._tooltip( target );
 		addDescribedBy( target, tooltip.attr( "id" ) );
-		tooltip.find( ".ui-tooltip-content" ).html( content );
+		tooltip.find( ".ui-tooltip-content" ).php( content );
 
 		function position( event ) {
 			positionOption.of = event;
