@@ -138,7 +138,7 @@ if(isset($_POST['reset']))
     
 function ForgotPassword()
 {
-    $con=mysqli_connect("localhost","root","root","cometinn","3307");
+	$con=mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
     if(mysqli_connect_errno())
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -166,7 +166,7 @@ function ForgotPassword()
             {
                 unset($_POST);                
                 echo "<script type='text/javascript'>alert('Password changed successfully. Login to your account.');</script>";
-                header("Location:login.php");
+                header("Location:index.php");
             }
             else
             {        
