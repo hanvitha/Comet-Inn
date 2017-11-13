@@ -1,10 +1,7 @@
-
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php include 'menu.php';
+require_once('config.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +35,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- start-smoth-scrolling -->
 </head>
 <body>
-<?php include 'menu.php';?>
 <!--search-->
 <div class="search-page">
 	<div class="container">	
@@ -204,182 +200,128 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-9 search-grid-right">
-				<div class="hotel-rooms">
-					<div class="hotel-left">
-						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand Park Hyatt</a>
-						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-						<div class="hotel-left-grids">
-							<div class="hotel-left-one">
-								<a href="single.php"><img src="images/21.jpg" alt="" /></a>
-							</div>
-							<div class="hotel-left-two">
-								<div class="rating text-left">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
+				<?php 
+					// $hotel_id = $_POST["hotel_id"];
+					// $check_in = $_POST["check_in"];
+					// $check_out = $_POST["check_out"];
+					
+					$hotel_id = '1';
+					$check_in = '2018/11/13';
+					$check_out = '2018/11/14';
+					
+					require_once('config.php');
+					try{ 
+						$db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);  
+						
+						if ($db->connect_error) {
+							die("Connection failed: " . $db->connect_error);
+						} 
+						
+						$query = 
+							"SELECT count(*) as count from room r
+							where hotel_id='$hotel_id' and r.room_id NOT IN 
+							(select b.room_id from bookings b
+							where r.room_id = b.room_id and 
+							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+							('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";						
+						
+						// Find out how many items are in the table
+						
+						$result = $db->query($query)->fetch_assoc();
+						$total = $result['count'][0];
+						
+						// How many items to list per page
+						$limit = 2;
+					
+						// How many pages will there be
+						$pages = ceil($total / $limit);
+					
+						// What page are we currently on?
+						$page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array(
+							'options' => array(
+								'default'   => 1,
+								'min_range' => 1,
+							),
+						)));
+					
+						// Calculate the offset for the query
+						$offset = ($page - 1)  * $limit;
+					
+						// Some information to display to the user
+						$start = $offset + 1;
+						$end = min(($offset + $limit), $total);
+					
+						// The "back" link
+						$prevlink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a> <a href="?page=' . ($page - 1) . '" title="Previous page">&lsaquo;</a>' : '<span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>';
+					
+						// The "forward" link
+						$nextlink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page">&rsaquo;</a> <a href="?page=' . $pages . '" title="Last page">&raquo;</a>' : '<span class="disabled">&rsaquo;</span> <span class="disabled">&raquo;</span>';
+					
+						// Display the paging information
+						echo '<div style="float:right" id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div><br><br>';
+					
+						// Prepare the paged query
+						$stmt = "SELECT * from room r
+								where hotel_id='$hotel_id' and r.room_id NOT IN 
+								(select b.room_id from bookings b
+								where r.room_id = b.room_id and 
+								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+								('$check_out' >= b.checkin and '$check_out' <= b.checkout ))) 
+								LIMIT $limit OFFSET $offset;";	
+						
+						$result1 = $db->query($stmt);
+						// Do we have any results?
+						if ($result1->num_rows > 0) {
+						// Define how we want to fetch the results
+						while ($row = $result1->fetch_assoc()) { 
+							$room_id = $row['room_id']; ?>
+							<div class="hotel-rooms">
+								<div class="hotel-left">
+									<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
+									<p><?php echo $row['room_desc'] ?></p>
+									<div class="hotel-left-grids">
+										<div class="hotel-left-one">
+											<a href="single.html"><img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" /></a>
+										</div>
+										<div class="hotel-left-two">
+											<div class="rating text-left">
+												<span><img src ="images/st<?php echo $row['customer_rating']; ?>.png"</span>
+											</div>
+											<div class="rating text-left">
+											<?php
+												
+												$query2 = "select f1.feature_name from room a inner join room_features b on a.room_id=b.room_id inner join features f1 on b.feature_id=f1.feature_id where room_id = '$room_id';";
+						
+											?>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
 								</div>
-								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
-								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="hotel-right text-right">
-						<h4><span>$8,750</span> $4,850</h4>
-						<p>Best price</p>
-						<a href="single.php">Continue</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="hotel-rooms">
-					<div class="hotel-left">
-						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Royal Taj Coromandel</a>
-						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-						<div class="hotel-left-grids">
-							<div class="hotel-left-one">
-								<a href="single.php"><img src="images/22.jpg" alt="" /></a>
-							</div>
-							<div class="hotel-left-two">
-								<div class="rating text-left">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
+								
+								<div class="hotel-right text-right">
+									<div>
+										<a style="background:white" href='wishlist.php?room_id=<?php echo $room_id?>'>
+										<img id = "wishlistImg" src="images/wishlist1.png" title="Add to wishlist" onmouseover="this.src='images/wishlist2.png'" onmouseout="this.src='images/wishlist1.png'" /></a>									
+									</div>
+									<h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
+									<p>Best price</p>
+									<a href="single.php">Continue</a>
 								</div>
-								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
-								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
+								<div class="clearfix"></div>
+								
 							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="hotel-right text-right">
-						<h4><span>$3,350</span> $1,450</h4>
-						<p>Best price</p>
-						<a href="single.php">Continue</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="hotel-rooms">
-					<div class="hotel-left">
-						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Crowne Plaza</a>
-						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-						<div class="hotel-left-grids">
-							<div class="hotel-left-one">
-								<a href="single.php"><img src="images/23.jpg" alt="" /></a>
-							</div>
-							<div class="hotel-left-two">
-								<div class="rating text-left">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-								</div>
-								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
-								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="hotel-right text-right">
-						<h4><span>$9,750</span> $5,700</h4>
-						<p>Best price</p>
-						<a href="single.php">Continue</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="hotel-rooms">
-					<div class="hotel-left">
-						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Modern Hilton Park</a>
-						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-						<div class="hotel-left-grids">
-							<div class="hotel-left-one">
-								<a href="single.php"><img src="images/24.jpg" alt="" /></a>
-							</div>
-							<div class="hotel-left-two">
-								<div class="rating text-left">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-								</div>
-								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
-								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="hotel-right text-right">
-						<h4><span>$9,750</span> $6,800</h4>
-						<p>Best price</p>
-						<a href="single.php">Continue</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="hotel-rooms">
-					<div class="hotel-left">
-						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand park Hotel</a>
-						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-						<div class="hotel-left-grids">
-							<div class="hotel-left-one">
-								<a href="single.php"><img src="images/25.jpg" alt="" /></a>
-							</div>
-							<div class="hotel-left-two">
-								<div class="rating text-left">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-								</div>
-								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
-								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="hotel-right text-right">
-						<h4><span>$8,750</span> $4,850</h4>
-						<p>Best price</p>
-						<a href="single.php">Continue</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="hotel-rooms">
-					<div class="hotel-left">
-						<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Royal Park Hyatt</a>
-						<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-						<div class="hotel-left-grids">
-							<div class="hotel-left-one">
-								<a href="single.php"><img src="images/26.jpg" alt="" /></a>
-							</div>
-							<div class="hotel-left-two">
-								<div class="rating text-left">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-								</div>
-								<a href="single.php"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a>
-								<p>2.5 km to Sed ut perspiciatis <span> 2.6 km to sit voluptatem</span></p>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="hotel-right text-right">
-						<h4><span>$4,650</span> $2,650</h4>
-						<p>Best price</p>
-						<a href="single.php">Continue</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
+							<?php
+							}
+							}else {
+								echo '<p>No results could be displayed.</p>';
+							}
+				
+						} catch (Exception $e) {
+							echo '<p>', $e->getMessage(), '</p>';
+						}
+				?>
+				
 		</div>
 	</div>
 </div>
@@ -390,11 +332,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>NAVIGATION</h3>
 				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="typography.php">Services</a></li>						
-					<li><a href="booking.php">Booking</a></li>
-					<li><a href="contact.php">Contact</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="booking.html">Booking</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">
@@ -415,7 +356,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>
@@ -426,13 +367,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!--footer-->
-<!-- copy -->
-<div class="copy-right">
-	<div class="container">
-			<p> &copy; 2015 Classic Hotel. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
-	</div>
-</div>
-<!-- //copy -->
 <!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>
 <!-- //for bootstrap working -->

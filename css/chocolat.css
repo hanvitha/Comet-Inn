@@ -110,3 +110,62 @@ body{
 	height:100%;
 	margin-top:-5px;
 }
+
+.spacing-table {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-size: 15px;
+	border-collapse: separate;
+	table-layout: fixed;
+	width: 80%;
+	border-spacing: 0 5px; /* this is the ultimate fix */
+  }
+  .spacing-table th {
+	text-align: left;
+	padding: 5px 15px;
+  }
+  .spacing-table td {
+	border-width: 3px 0;
+	width: 50%;
+	padding: 5px 15px;
+  }
+  .spacing-table td:first-child {
+	border-left-width: 3px;
+	border-radius: 5px 0 0 5px;
+  }
+  .spacing-table td:last-child {
+	border-right-width: 3px;
+	border-radius: 0 5px 5px 0;
+  }
+  .spacing-table thead {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+  }
+  .spacing-table tbody {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	border-spacing: 0 10px;
+  }
+
+  #register .short{
+	font-weight:bold;	
+	color:#FF0000;
+	font-size:small;
+	}
+	#register .weak{
+	font-weight:bold;		
+	color:hsl(27, 100%, 51%);
+	font-size:small;
+	}
+	#register .good{
+	font-weight:bold;		
+	color:#2D98F3;
+	font-size:small;
+	}
+	#register .strong{
+	font-weight:bold;		
+	color: #32cd32;
+	font-size:small;
+	}
+	

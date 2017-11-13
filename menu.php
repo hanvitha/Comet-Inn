@@ -28,6 +28,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script> 
 	<!-- start-smoth-scrolling -->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
@@ -49,14 +54,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <span class="menu"><img src="images/menu.png" alt=""/></span>
                 <nav class="cl-effect-11" id="cl-effect-11">
                     <ul class="nav1">
-                        <li><a href="index.php" data-hover="HOME">HOME</a></li>
+                        <li><a href="home.php" data-hover="HOME">HOME</a></li>
                         <li><a href="about.php" data-hover="ABOUT">ABOUT</a></li>
                         <li><a href="typography.php" data-hover="SERVICES">SERVICES</a></li>
                         <li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
                         <li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
                         <?php
                         if(!$user){?>
-                            <li><a href="adminmenu.php" data-hover="ADMIN">ADMIN</a></li>
+                        <li>
+                            <div class="dropdown1">
+                                <div class="dropbtn" onclick="myFunction()">ADMIN
+                                <i class="fa fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown-content" id="myDropdown">
+                                    <a href="usersList.php">USERS LIST</a>
+                                    <a href="roomInfo.php">Rooms List</a>
+                                    <a href="manageHotel.php">Manage Hotel</a>
+                                </div>
+                            </div> 
+                        </li>
                             <?php
                         }
                         ?>
@@ -82,4 +98,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 $(document).ready(function() {
     $(".banner-page-head").addClass("imagebg");
 });
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
 </script>
