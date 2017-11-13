@@ -121,7 +121,7 @@ if(isset($_POST['login']))
 function Login()
 {
 
-$con=mysqli_connect("localhost","root","root","cometinn");
+$con=mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 if(mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();

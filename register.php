@@ -148,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	function Signup()
 	{
           
-    $con=mysqli_connect("localhost","root","root","cometinn","3307");
+    $con=mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
     if(mysqli_connect_errno())
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -181,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 echo "<script type='text/javascript'>alert('Successfully registered with Comet Inn!');</script>"; 
                 mysqli_close($con);
                 
-                header("Location: login.php");
+                header("Location: home.php");
             }
             else
             {

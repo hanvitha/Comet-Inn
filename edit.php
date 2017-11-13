@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="banner-bottom1">
 				<h3 class="tittle"> Edit profile </h2>
     <?php
-    $con=mysqli_connect("localhost","root","root","cometinn","3307");
+    $con=mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
     if(mysqli_connect_errno())
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
