@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/bootstrap.min.js"></script>
 <link href="css/select2.min.css" rel="stylesheet" />
 <script src="js/select2.min.js"></script>
-<script src="http://malsup.github.com/jquery.form.js"></script> 
+<script src="js/jquery.form.js"></script> 
 	<!-- start-smoth-scrolling -->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>

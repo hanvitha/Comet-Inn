@@ -31,7 +31,7 @@
                                     $rows=$query->fetchAll();
                                     ?><option value="">CHOOSE CITY</option>  
                                     <?php for($i=0; $i< count($rows); $i++){?>
-                                    <option value="<?php echo $rows[$i]["hotel_id"]?>" <?php if( $_GET['city'] === $rows[$i]["hotel_id"]) echo ' selected="selected"' ?> ><?php echo $rows[$i]["city_name"]?></option>  
+                                    <option value="<?php echo $rows[$i]["hotel_id"]?>" <?php if( isset($_GET['city']) && $_GET['city'] === $rows[$i]["hotel_id"]) echo ' selected="selected"' ?> ><?php echo $rows[$i]["city_name"]?></option>  
                                 <?php } ?>
                             </select>
                         </div>
@@ -54,9 +54,8 @@
                     try{    
                         $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
                         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-                        $id = $db->quote($_POST["city"]);
-                        $hotel_id = $_POST["city"];
-                        $address = $_POST[$_POST["city"].'_location'];
+                        $id = $db->quote($_GET["city"]);
+                        $hotel_id = $_GET["city"];
                         $query = $db->prepare("SELECT * FROM room where hotel_id = $id and status=1");
                         $query->execute();
                         $rooms=$query->fetchAll();
@@ -75,7 +74,6 @@
                                                 <span>☆</span>
                                                 <?php } ?>
                                             </div>
-                                            <a href="roomUpdate.php?roomId=<?php echo $rooms[$i]["room_id"]?>"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"><?php echo $address ?></span></a>
                                             <p>
                                                 <i>Features:</i>
                                                 <?php 

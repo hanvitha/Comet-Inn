@@ -8,7 +8,7 @@ require_once('config.php');
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/chocolat.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/validateLogin.js" type="text/javascript"></script>
 
 <div class="banner-info">

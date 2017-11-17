@@ -4,10 +4,12 @@
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/chocolat.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
-<script src="http://malsup.github.com/jquery.form.js"></script> 
-
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
+<script src="js/jquery.form.js"></script> 
+<?php
+    $hotelId = $_GET["hotelId"];
+?>
 
 <div class="search-page search-grid-full">
     <div class="booking">
@@ -27,7 +29,7 @@
                             </div>
                         </div>
                     </form>
-                    <form method="POST" action="addRoom.php" name="addRoom" id="addRoom" class="edit">
+                    <form method="POST" action="" name="addRoom" id="addRoom" class="edit">
                         <h4>Description</h4>         			
                         <input type="text" name="desc" placeholder="Description" required>
                         <h4>Price($)</h4>         			
@@ -45,7 +47,6 @@
                         <h4>Features</h4>         			
                         <div class="sort-by">
                             <select class="sel" id="features" name="features[]" multiple="multiple">
-
                                 <?php
                                     $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
                                     $query = $db->prepare("SELECT * FROM features");
@@ -115,7 +116,7 @@
                 $sql = "INSERT INTO room_features VALUES ($roomId, $featuresList[$featureNo])";
                 $db->exec($sql);
             }
-            echo '<script type="text/javascript">location.href = "roomInfo.php";</script>';
+            echo '<script type="text/javascript">location.href = "roomInfo.php?city="$_GET["hotelId"]&search=search;</script>';
             //header("Location:roomInfo.php"); */
         }catch(PDOException $ex){
             echo "<script type='text/javascript'>alert('$ex->getMessage();');</script>"; 
