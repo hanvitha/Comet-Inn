@@ -1,5 +1,6 @@
 <?php
 require_once('config.php');
+session_start();
 /* if(!isset($_SESSION[USERINFO][USERNAME_COLUMN])){
     header("Location:login.php");
 } */
@@ -11,7 +12,7 @@ if(isset($_SESSION[USERINFO][USERNAME_COLUMN])){
 if($user){
     ?><title>Classic Hotel a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title><?php
 }else{
-    ?><title>Welcome admin</title><?php
+    ?><title>Comet Inn</title><?php
 }
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,10 +29,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="js/bootstrap.min.js"></script>
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script> 
 	<!-- start-smoth-scrolling -->
 		<script type="text/javascript" src="js/move-top.js"></script>
@@ -67,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <i class="fa fa-caret-down"></i>
                                 </div>
                                 <div class="dropdown-content" id="myDropdown">
-                                    <a href="usersList.php">USERS LIST</a>
+                                    <a href="usersList.php?page=1">USERS LIST</a>
                                     <a href="roomInfo.php">Rooms List</a>
                                     <a href="manageHotel.php">Manage Hotel</a>
                                 </div>

@@ -26,9 +26,9 @@ if(isset($_POST['submit_image'])){
 		$db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
         $roomId = $db->quote($_GET["roomId"]);
         $roomImage = $db->quote('uploads/'.$image_name);
-        $updateQuery =  $db->prepare("UPDATE room SET room_image=$roomImage WHERE room_id=$roomId");  
+        $updateQuery =  $db->prepare("UPDATE room SET image_url=$roomImage WHERE room_id=$roomId");  
         $result = $updateQuery->execute();
-        $rooms[0]["room_image"] = $roomImage;
+        $rooms[0]["image_url"] = $roomImage;
     }
 }
 
@@ -48,7 +48,7 @@ if(isset($_POST['submit_image'])){
                                 <input type="submit" name='submit_image' value="Upload Image" id="submit_image"/>
                             </div>
                             <div class="avatar-preview">
-                                <div id="imagePreview" style="background-image: url(<?php if ($rooms[0]["room_image"] == "") echo 'images/upload.png'; else  echo $rooms[0]["room_image"];?>);">
+                                <div id="imagePreview" style="background-image: url(<?php if ($rooms[0]["image_url"] == "") echo 'images/upload.png'; else  echo $rooms[0]["image_url"];?>);">
                                 </div>
                             </div>
                         </div>

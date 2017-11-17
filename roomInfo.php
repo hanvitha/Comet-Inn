@@ -12,32 +12,27 @@
     function deleteRoom($id){
         $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-        //$id = $db->quote($id);
         $updateQuery =  $db->prepare("UPDATE room SET status=0 WHERE room_id=$id");  
         $result = $updateQuery->execute();
-        //header("Location: adminmenu.php");
     }
 ?>
 <div class="search-page search-grid-full">
     <div class="container">
         <div class="tab-content">
-            <form method="post" action="">
+            <form action="">
                 <div class="droop-down">
                     <div class="droop">
                         <div class="sort-by">
                             <select class="sel" name="city">
                                 <?php
                                     $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
-                                    $query = $db->prepare("SELECT * FROM hotel");
+                                    $query = $db->prepare("SELECT * FROM hotel where status=1");
                                     $query->execute();
                                     $rows=$query->fetchAll();
                                     ?><option value="">CHOOSE CITY</option>  
                                     <?php for($i=0; $i< count($rows); $i++){?>
-                                    <option value="<?php echo $rows[$i]["hotel_id"]?>"><?php echo $rows[$i]["city_name"]?></option>  
-                                    <?php } ?>
-                                    <?php for($i=0; $i< count($rows); $i++){?>
-                                    <input type="hidden" name="<?php echo $rows[$i]["hotel_id"]?>_location" value="<?php echo $rows[$i]["address"]?>" />
-                                    <?php } ?>
+                                    <option value="<?php echo $rows[$i]["hotel_id"]?>" <?php if( $_GET['city'] === $rows[$i]["hotel_id"]) echo ' selected="selected"' ?> ><?php echo $rows[$i]["city_name"]?></option>  
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
@@ -52,7 +47,7 @@
     <div class="container">
         <div class="tab-content">
             <?php
-                if(isset($_POST['search'])){
+                if(isset($_GET['search'])){
                     getRooms();
                 }
                 function getRooms(){
@@ -72,11 +67,11 @@
                                     <p><?php echo $rooms[$i]["room_desc"] ?></p>
                                     <div class="hotel-left-grids">
                                         <div class="hotel-left-one">
-                                        <a href="single.php"><img src="<?php echo $rooms[$i]["room_image"]?>" width="130px" height="230px"></a>
+                                        <a href="single.php"><img src="<?php echo $rooms[$i]["image_url"]?>" width="130px" height="230px"></a>
                                         </div>
                                         <div class="hotel-left-two">
                                             <div class="rating text-left">
-                                                <?php for($count = 0; $count < $rooms[$i]["rating"]; $count++){?>
+                                                <?php for($count = 0; $count < $rooms[$i]["customer_rating"]; $count++){?>
                                                 <span>☆</span>
                                                 <?php } ?>
                                             </div>

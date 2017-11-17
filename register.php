@@ -147,7 +147,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	}
 	function Signup()
 	{
-          
     $con=mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
     if(mysqli_connect_errno())
     {

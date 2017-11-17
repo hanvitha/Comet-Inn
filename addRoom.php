@@ -7,25 +7,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script> 
-<?php
-    
-/* if(isset($_POST['submit_image'])){
-	$name = $_FILES['upload_file']['name'];
-	list($txt, $ext) = explode(".", $name);
-	$image_name = time().".".$ext;
-	$tmp = $_FILES['upload_file']['tmp_name'];
 
-	if(move_uploaded_file($tmp, 'uploads/'.$image_name)){
-		$db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
-        $roomId = $db->quote($_GET["roomId"]);
-        $roomImage = $db->quote('uploads/'.$image_name);
-        $updateQuery =  $db->prepare("INSERT INTO room(room_image) values($roomImage)");  
-        $result = $updateQuery->execute();
-        echo "<script type='text/javascript'>alert('$result');</script>"; 
-    }
-} */
-
-?>
 
 <div class="search-page search-grid-full">
     <div class="booking">
@@ -123,7 +105,7 @@
             $imgsrc = $db->quote($_POST["imgsrc"]);
             $roomType = $db->quote($_POST["roomType"]);
             $max_occupancy = $db->quote($_POST["max_occupancy"]);
-            $insertQuery =  $db->prepare("INSERT INTO room(room_desc, price, room_type, max_occupancy, hotel_id, room_image, status) values($desc, $price, $roomType, $max_occupancy, $hotel, $imgsrc,1 )");  
+            $insertQuery =  $db->prepare("INSERT INTO room(room_desc, price, room_type, max_occupancy, hotel_id, image_url, status) values($desc, $price, $roomType, $max_occupancy, $hotel, $imgsrc,1 )");  
             $result = $insertQuery->execute();
             $roomId = $db->lastInsertId(); 
             $featuresList = $_POST["features"];

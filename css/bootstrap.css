@@ -128,10 +128,10 @@ select {
 button,
 html input[type="button"],
 input[type="reset"],
-/* input[type="submit"] {
+ input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
-} */
+} 
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -3371,7 +3371,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-block + .btn-block {
   margin-top: 5px;
 }
-/* input[type="submit"].btn-block, */
+input[type="submit"].btn-block, 
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;

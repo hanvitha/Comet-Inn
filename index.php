@@ -1,7 +1,7 @@
 <div class="banner1">
 <?php include 'menu.php';
 require_once('config.php');
-session_start();
+//session_start();
 ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

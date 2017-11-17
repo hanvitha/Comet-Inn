@@ -6,6 +6,9 @@ require_once('config.php');
         <div class="tab-content">
             <div id="userlist" class="tab-pane fade in active padded">
                     <?php
+                    if(isset($_GET["deleteId"])){
+                        deleteUser($_GET["deleteId"]);
+                    }
                     function deleteUser($id){
                         $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
                         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
@@ -16,7 +19,10 @@ require_once('config.php');
                     }
                     try{
                         $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
-                        $query = $db->prepare("SELECT * FROM user where user_id > 1 and status=1");
+                        $pageNumber = $_GET["page"];
+                        $start = $pageNumber*5 - 5;
+                        $end = $pageNumber*5;
+                        $query = $db->prepare("SELECT * FROM user where user_id > 1 and status=1 limit $start, $end");
                         $query->execute();
                         $rows=$query->fetchAll();
                         
@@ -38,7 +44,7 @@ require_once('config.php');
                                         <td><?php echo $rows[$i]['phone']?> </td>
                                         <td>
                                             <a href="custInfo.php?id=<?php echo $rows[$i]['user_id']?>" class="btn btn-sm btn-info" data-toggle="tooltip" title="Edit & View" id="btnEdit"><span class="glyphicon glyphicon glyphicon-edit"></span></a>
-                                            <a href="<?php deleteUser($rows[$i]['user_id']);?>" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete" id="btnDel"  <?php if($rows[$i]['status'] == 0) echo 'disabled';?>><span class="glyphicon glyphicon-trash"></span></a>
+                                            <a href="usersList.php?deleteId=<?php echo $rows[$i]['user_id']?>" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete" id="btnDel"  <?php if($rows[$i]['status'] == 0) echo 'disabled';?>><span class="glyphicon glyphicon-trash"></span></a>
                                         </td>
                                     </tr>
                                 <?php
@@ -55,16 +61,24 @@ require_once('config.php');
                 <div>
                 <nav>
 				  <ul class="pagination pagination-lg">
-                    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                    
                     <?php
-                     $noOfPages = ceil(count($rows)/10);
+                    $currentPage = $_GET["page"];
+                    $query = $db->prepare("SELECT * FROM user where user_id > 1 and status=1");
+                    $query->execute();
+                    $rows=$query->fetchAll();
+                    
+                     $noOfPages = ceil(count($rows)/5);
                      $i = 0;
+                     ?>
+                     <li><a href="usersList.php?page=<?php echo $currentPage - 1 ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                     <?php
                      while($i < $noOfPages){?>
-                        <li><a href="#"><?php echo $i+1?></a></li>
+                        <li><a href="usersList.php?page=<?php echo $i+1 ?>"><?php echo $i+1 ?></a></li>
                      <?php
                         $i++;
                     }?>
-					<li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+					<li><a href="usersList.php?page=<?php echo $currentPage + 1 ?>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 				  </ul>
 				  </nav>
                 </div>
