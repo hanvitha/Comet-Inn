@@ -37,6 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class ="container">
      <div class="col-md-12 search-grid-right">
+     <br/><br/>
         <?php 
             require_once('config.php');
             try{ 
@@ -47,14 +48,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 } 
                 //user id set condition
                 if(true){
-                    if(isset($_GET['room_id'])){
-                        // $user_id = $_SESSION['user_id'];
-                        $user_id = 1;
+                    if(isset($_GET['room_id']) && !isset($_GET['delete']))
+                    {
+                        $user_id = $_SESSION['sess_userid'];
                         $room_id = $_GET['room_id'];
-                        $query1 = "INSERT INTO wishlist (`user_id`, `room_id`)
-                                    VALUES ('$user_id', '$room_id')";
+                        $checkin = $_SESSION['check_in'];
+                        $checkout = $_SESSION['check_out'];
+                        $noOfPersons = $_SESSION['noOfPersons'];
+
+                        $check =  "SELECT * FROM wishlist WHERE room_id = '$room_id'";
+                        $result = mysqli_query($db,$check);
+                        $row = mysqli_fetch_array($result);
+
+                        if(mysqli_num_rows($result)>0 && $row['room_id']==$room_id)
+                        {
+                            //unset($_POST);
+                            echo "<script type='text/javascript'>alert('Room already exists in your wishlist!');</script>"; 
+                        }
+                        else{
+                        $query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`)
+                                    VALUES ('$user_id', '$room_id', '$checkin', '$checkout')";
                         if (mysqli_query($db, $query1)) {
-                            echo "<div><span class='label label-success'> New room added into your wishlist </span> </div>";
+                            echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
+                        } else {
+                            //change this content
+                            echo "Error: " . $query1 . "<br>" . mysqli_error($db);
+                        }
+                        }
+                    }
+
+                    if(isset($_GET['delete'])){
+                        $user_id = $_SESSION['sess_userid'];                        
+                        $room_id = $_GET['room_id'];
+                        $querydelete = "DELETE from wishlist where room_id='$room_id' && user_id='$user_id'";
+                        if (mysqli_query($db, $querydelete)) {
+                            echo "<script type='text/javascript'>alert('Room removed from your wishlist!');</script>"; 
                         } else {
                             //change this content
                             echo "Error: " . $query1 . "<br>" . mysqli_error($db);
@@ -144,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
                                         <p>Best price</p>
-                                        <a href="single.php">Continue</a>
+                                        <a href="single.php?room_id=<?php echo $room_id?>&src=wishlist">Reserve Now</a>
                                     </div>
                                     <div class="clearfix"></div>
                                     
@@ -194,7 +222,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                     <h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
                                     <p>Best price</p>
-                                    <a href="single.php">Continue</a>
+                                    <a href="single.php?room_id=<?php echo $room_id?>&src=wishlist">Reserve Now</a>
                                 </div>
                                 <div class="clearfix"></div>
                                 
@@ -202,7 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <?php
                             }
                         }else{
-                            echo "Shoot!!:( Looks like there is trouble adding the content... Try again! ";
+                            echo "WishList is Empty! Try adding a few rooms as your favorites. ";
                         }
                     }
                 }

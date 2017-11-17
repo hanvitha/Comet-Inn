@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="banner-bottom">
 			<div class="droop-down">
-				<form method="POST" action="search.php" class="search-form">
+				<form method="POST" action="home.php" class="search-form">
 					<div class="sort-by"> 
 						<select class="sel searchform-elements" name ="hotel_id" >
 							<option value="" selected disabled hidden>Choose your City</option>
@@ -116,9 +116,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<label for="checkout" > Check-out : </label><input type="date" name ="check_out"  value=""/>
 					</div>
 					<div class="search">
-							<input type="submit" value="search">						
+							<input type="submit" name="search" value="search">
+													
 					</div>
 				</form>
+				<?php
+							if(isset($_POST['search']))
+							{
+								$_SESSION["check_in"] = $_POST['check_in'];
+								$_SESSION["check_out"] = $_POST['check_out'];
+								$_SESSION["noOfPersons"] = $_POST['noOfPersons'];
+								echo '<script type="text/javascript">location.href = "search.php";</script>';								
+							}
+							?>
 				<div class="clearfix"></div>
 			</div>
 		</div>
