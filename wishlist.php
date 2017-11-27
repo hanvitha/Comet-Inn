@@ -36,8 +36,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <div class ="container">
+
      <div class="col-md-12 search-grid-right">
      <br/><br/>
+     <h3 class="tittle"> <?php echo $_SESSION["sess_name"]?>'s Wishlist</h2>
+
         <?php 
             require_once('config.php');
             try{ 
@@ -91,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
                     $query = "select count(*) as count from room r 
                         join wishlist w
-                        on r.room_id = w.room_id and w.user_id ='$room_id';";						
+                        on r.room_id = w.room_id and w.user_id ='$user_id';";						
                 
                     // Find out how many items are in the table
                     
