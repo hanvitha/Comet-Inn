@@ -1,5 +1,9 @@
 <?php  include 'menu.php';
     require_once('config.php');
+    if(!isset($_SESSION["sess_userid"])){
+        echo '<script type="text/javascript">location.href = "index.php";</script>';
+        echo '<script type="text/javascript">alert("please login");</script>';	
+    }
     $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
     $query = $db->prepare("SELECT * FROM hotel where status=1");
     $query->execute();

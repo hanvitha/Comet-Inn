@@ -1,6 +1,10 @@
 <?php include 'menu.php';
 require_once('config.php');
 session_start();
+if(!isset($_SESSION["sess_userid"])){
+	echo '<script type="text/javascript">location.href = "index.php";</script>';
+	echo '<script type="text/javascript">alert("please login");</script>';	
+}
 if(isset($_GET["roomId"])){
 	$db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
 	$roomId = $db->quote($_GET["roomId"]);

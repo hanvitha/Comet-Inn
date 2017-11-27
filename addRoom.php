@@ -1,5 +1,9 @@
 <?php  include 'menu.php';
     require_once('config.php');
+    if(!isset($_SESSION["sess_userid"])){
+        echo '<script type="text/javascript">location.href = "index.php";</script>';
+        echo '<script type="text/javascript">alert("please login");</script>';	
+    }
 ?>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />

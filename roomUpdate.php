@@ -1,5 +1,9 @@
 <?php  include 'menu.php';
     require_once('config.php');
+    if(!isset($_SESSION["sess_userid"])){
+        echo '<script type="text/javascript">location.href = "index.php";</script>';
+        echo '<script type="text/javascript">alert("please login");</script>';	
+    }
 ?>
 <link href="css/select2.min.css" rel="stylesheet" />
 <script src="js/select2.min.js"></script>
