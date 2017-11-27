@@ -143,7 +143,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     // Do we have any results?
                     if ($result1->num_rows > 0) {
                             while ($row = $result1->fetch_assoc()) { 
-                                $room_id = $row['room_id']; ?>
+                                $room_id = $row['room_id'];
+                                $wishlist_id = $row['wishlist_id']; ?>
                                 <div class="hotel-rooms">
                                     <div class="hotel-left">
                                         <a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
@@ -175,7 +176,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
                                         <p>Best price</p>
-                                        <a href="single.php?room_id=<?php echo $room_id?>&src=wishlist">Reserve Now</a>
+                                        <a href="single.php?room_id=<?php echo $room_id?>&wishlist_id=<?php echo $wishlist_id?>&src=wishlist">Reserve Now</a>
                                     </div>
                                     <div class="clearfix"></div>
                                     
@@ -193,7 +194,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     // Do we have any results?
                     if ($result1->num_rows > 0) {
                         while ($row = $result1->fetch_assoc()) { 
-                            $room_id = $row['room_id']; ?>
+                            $room_id = $row['room_id']; 
+                            $wishlist_id = $row['wishlist_id'];?>
                             <div class="hotel-rooms">
                                 <div class="hotel-left">
                                     <a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
@@ -225,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                     <h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
                                     <p>Best price</p>
-                                    <a href="single.php?room_id=<?php echo $room_id?>&src=wishlist">Reserve Now</a>
+                                    <a href="single.php?room_id=<?php echo $room_id?>&wishlist_id=<?php echo $wishlist_id?>&src=wishlist">Reserve Now</a>
                                 </div>
                                 <div class="clearfix"></div>
                                 
