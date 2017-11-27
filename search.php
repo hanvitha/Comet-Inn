@@ -44,15 +44,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">	
 		<div class="search-grids">
 			<div class="col-md-3 search-grid-left">
+				
+				
 				<div class="search-hotel">
 					<h3 class="sear-head">Name contains</h3>
-					<form>
-						<input type="text" value="Hotel name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Hotel name...';}" required="">
-						<input type="submit" value=" ">
+					<form method="POST" action="search.php">
+						<input type="text" name="filter_text" value="Hotel name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Hotel name...';}" required="">
+						<input type="submit" name="name_filter" value=" ">
 					</form>
 				</div>
 				
 				<div class="range">
+				<script type="text/javascript" src="js/jquery-ui.js"></script>
+
 					<h3 class="sear-head">Average nightly rate</h3>
 							<ul class="dropdown-menu6">
 								<li>
@@ -73,135 +77,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										}
 							 });
 							$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-
 							});//]]>  
-
 							</script>
 							
 				</div>
-				<div class="range-two">
-					<h3 class="sear-head">Distance from</h3>
-						<select class="sel">
-							<option value="">Enter City Center</option>
-							<option value="">Park View Center</option>
-							<option value="">E Park Road</option>
-							<option value="">Silver City</option>   
-						</select>
-
-							<ul class="dropdown-menu5">
-								<li>
-									               
-									<div id="slider-range1"></div>							
-										<input type="text" id="amount1" style="border: 0; color: #ffffff; font-weight: normal;" />
-									</li>			
-							</ul>
-							<!---->
-							<script type="text/javascript" src="js/jquery-ui.js"></script>
-							
-							<script type='text/javascript'>//<![CDATA[ 
-							$(window).load(function(){
-							 $( "#slider-range1" ).slider({
-										range: true,
-										min: 0,
-										max: 6000,
-										values: [ 50, 5000 ],
-										slide: function( event, ui ) {  $( "#amount1" ).val( "KM-" + ui.values[ 0 ] + " - KM-" + ui.values[ 1 ] );
-										}
-							 });
-							$( "#amount1" ).val( "KM-" + $( "#slider-range1" ).slider( "values", 0 ) + " - KM-" + $( "#slider-range1" ).slider( "values", 1 ) );
-
-							});//]]>  
-
-							</script>
-				</div>
-				<div class="single-star-bottom">
-					<h3 class="sear-head">Star rating</h3>
-						
-							<input type="checkbox"  id="nike" value="">
-							<label for="nike"><span></span><b><img src="images/st2.png" alt="" /></b></label>
-						
-						
-							<input type="checkbox"  id="nike1" value="">
-							<label for="nike1"><span></span> <b><img src="images/st3.png" alt="" /></b></label>
-					
-					
-							<input type="checkbox"  id="nike2" value="">
-							<label for="nike2"><span></span><b><img src="images/st4.png" alt="" /></b></label>
 				
 				
-							<input type="checkbox"  id="nike3" value="">
-							<label for="nike3"><span></span> <b><img src="images/st5.png" alt="" /></b></label>
 				
-						
-							<input type="checkbox"  id="nike4" value="">
-							<label for="nike4"><span></span><b><img src="images/st.png" alt="" /></b></label>
-						
-				</div>
 				
-				<div class="menu-grid">
-					<ul class="menu_drop">
-						<li class="item1"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Features</a>
-							<ul>
-								<li class="subitem1"><a href="#">Roll-in shower </a></li>
-								<li class="subitem2"><a href="#">Comfortable bathroom</a></li>
-								<li class="subitem3"><a href="#">WI-FI facility</a></li>
-							</ul>
-						</li>
-						<li class="item2"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Facilities</a>
-							<ul>
-								<li class="subitem1"><a href="#">Childcare </a></li>
-								<li class="subitem2"><a href="#">Gym</a></li>
-								<li class="subitem3"><a href="#">Bar</a></li>
-							</ul>
-						</li>
-						<li class="item3"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Accommodation type</a>
-							<ul>
-								<li class="subitem1"><a href="#">Resort</a></li>
-								<li class="subitem2"><a href="#">Hostel</a></li>
-								<li class="subitem3"><a href="#">Apartment</a></li>
-							</ul>
-						</li>
-						<li class="item4"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Landmarks</a>
-							<ul>
-								<li class="subitem1"><a href="#">Mexican City</a></li>
-								<li class="subitem2"><a href="#">Park View Center</a></li>
-								<li class="subitem3"><a href="#">Land Park Center</a></li>
-							</ul>
-						</li>
-						<li class="item5"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Neighbourhood</a>
-							<ul>
-								<li class="subitem1"><a href="#">Diamond Park Colony</a></li>
-								<li class="subitem2"><a href="#">E Park Road</a></li>
-								<li class="subitem3"><a href="#">lake View Center</a></li>
-							</ul>
-						</li>
-					</ul>
-					<!-- script for tabs -->
-						<script type="text/javascript">
-							$(function() {
-							
-								var menu_ul = $('.menu_drop > li > ul'),
-									   menu_a  = $('.menu_drop > li > a');
-								
-								menu_ul.hide();
-							
-								menu_a.click(function(e) {
-									e.preventDefault();
-									if(!$(this).hasClass('active')) {
-										menu_a.removeClass('active');
-										menu_ul.filter(':visible').slideUp('normal');
-										$(this).addClass('active').next().stop(true,true).slideDown('normal');
-									} else {
-										$(this).removeClass('active');
-										$(this).next().stop(true,true).slideUp('normal');
-									}
-								});
-							
-							});
-						</script>
-					<!-- script for tabs -->
-
-				</div>
 			</div>
 			<div class="col-md-9 search-grid-right">
 				<?php 
@@ -246,15 +129,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							}
 						}
 					}
-
+					if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name...")
+					{		
+						$name_filter = $_POST['filter_text'];			
 						$query = 
 							"SELECT count(*) as count from room r
-							where hotel_id='$hotel_id' and max_occupancy <= $occupancy and r.room_id NOT IN 
+							where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
 							(select b.room_id from bookings b
 							where r.room_id = b.room_id and 
 							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
-							('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";						
-						
+							('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
+							and r.room_type like '%$name_filter%';";						
+					}else
+						$query = 
+						"SELECT count(*) as count from room r
+						where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+						(select b.room_id from bookings b
+						where r.room_id = b.room_id and 
+						(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+						('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";						
+					
 						// Find out how many items are in the table
 						
 						$result = $db->query($query)->fetch_assoc();
@@ -291,8 +185,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						echo '<div style="float:right" id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div><br><br>';
 					
 						// Prepare the paged query
+						if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name...")
+						{
+						$filter=$_POST['filter_text'];
 						$stmt = "SELECT * from room r
-								where hotel_id='$hotel_id' and max_occupancy <= $occupancy and r.room_id NOT IN 
+						where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+						(select b.room_id from bookings b
+						where r.room_id = b.room_id and 
+						(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+						('$check_out' >= b.checkin and '$check_out' <= b.checkout ))) 
+						and r.room_type like '%$filter%'
+						LIMIT $limit OFFSET $offset;";
+						}
+						else
+						$stmt = "SELECT * from room r
+								where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
 								(select b.room_id from bookings b
 								where r.room_id = b.room_id and 
 								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -419,3 +326,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </body>
 </html>
+
