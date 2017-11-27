@@ -161,7 +161,7 @@ function ForgotPassword()
         }
         else
         {
-            $update = "UPDATE `user` SET password='$newpwd' WHERE email_id='$email'";
+            $update = "UPDATE `user` SET password=md5('$newpwd') WHERE email_id='$email'";
             if($con->query($update)===TRUE)
             {
                 unset($_POST);                

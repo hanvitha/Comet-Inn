@@ -127,11 +127,12 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 exit();
 }
     $email=$_POST["email"];
-    $password=$_POST["pwd"];
+	$password=$_POST["pwd"];
+	$hashedpwd=md5($password);
     $query = "SELECT * FROM `user` WHERE email_id = '$email'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
-    if(mysqli_num_rows($result)>0 && $row['password'] == $password && $row['email_id']==$email)
+    if(mysqli_num_rows($result)>0 && $row['password'] == $hashedpwd && $row['email_id']==$email)
     {
         $_SESSION["sess_userid"]=$row['user_id'];
         $_SESSION["sess_name"]=$row['name'];

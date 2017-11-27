@@ -172,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         if($password!='' || $full_name!='' || $email!='' || $phone!='')
         {
             $query = "INSERT INTO `user` (user_id, name, email_id, password, phone, status) 
-                        VALUES (null, '$full_name', '$email', '$password', '$phone', 1)";
+                        VALUES (null, '$full_name', '$email', md5('$password'), '$phone', 1)";
             unset($_POST);            
                         
             if ($con->query($query) === TRUE)
