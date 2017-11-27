@@ -69,8 +69,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             echo "<script type='text/javascript'>alert('Room already exists in your wishlist!');</script>"; 
                         }
                         else{
-                        $query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`)
-                                    VALUES ('$user_id', '$room_id', '$checkin', '$checkout')";
+                        $query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`,`num_of_people`)
+                                    VALUES ('$user_id', '$room_id', '$checkin', '$checkout', '$noOfPersons')";
                         if (mysqli_query($db, $query1)) {
                             echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
                         } else {
@@ -176,7 +176,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
                                         <p>Best price</p>
-                                        <a href="single.php?room_id=<?php echo $room_id?>&wishlist_id=<?php echo $wishlist_id?>&src=wishlist">Reserve Now</a>
+                                        <a href="single.php?wishlist_id=<?php echo $wishlist_id?>&src=wishlist">Reserve Now</a>
                                     </div>
                                     <div class="clearfix"></div>
                                     
@@ -227,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                     <h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
                                     <p>Best price</p>
-                                    <a href="single.php?room_id=<?php echo $room_id?>&wishlist_id=<?php echo $wishlist_id?>&src=wishlist">Reserve Now</a>
+                                    <a href="single.php?wishlist_id=<?php echo $wishlist_id?>&src=wishlist">Reserve Now</a>
                                 </div>
                                 <div class="clearfix"></div>
                                 
