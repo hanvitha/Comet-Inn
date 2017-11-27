@@ -1,166 +1,28 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Classic Hotel a Hotel Category Flat Bootstrap Responsive Website Template | single :: w3layouts</title>
-<!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Classic Hotel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //for-mobile-apps -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="css/flexslider.css" media="screen" />
-<!-- js -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<!-- //js -->
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-	<!-- start-smoth-scrolling -->
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-	<!-- start-smoth-scrolling -->
-</head>
-<body>
-<!-- banner -->
-<div class="banner page-head">
-	<div class="container">
-		<div class="header-nav">
-			<div class="logo">
-				<h1><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a></h1>
-			</div>
-			<div class="navigation">
-				<span class="menu"><img src="images/menu.png" alt=""/></span>
-				<nav class="cl-effect-11" id="cl-effect-11">
-					<ul class="nav1">
-						<li><a href="index.php" data-hover="HOME">HOME</a></li>
-						<li><a href="about.php" data-hover="ABOUT">ABOUT</a></li>
-						<li><a href="typography.php" data-hover="SERVICES">SERVICES</a></li>
-						<li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
-						<li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
-					</ul>
-				</nav>
-				<!-- script for menu -->
-					<script> 
-						$( "span.menu" ).click(function() {
-						$( "ul.nav1" ).slideToggle( 300, function() {
-						 // Animation complete.
-						});
-						});
-					</script>
-				<!-- //script for menu -->
-				
-			</div>
-			<div class="social-icons">
-				<ul>
-					<li><a href="#" class="f1"></a></li>
-					<li><a href="#" class="f2"></a></li>
-					<li><a href="#" class="f3"></a></li>
-					<li><a href="#" class="f4"></a></li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
-<!-- //banner -->
+<?php include 'menu.php';
+require_once('config.php');
+session_start();
+if(isset($_GET["roomId"])){
+	$db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
+	$roomId = $db->quote($_GET["roomId"]);
+	$query = $db->prepare("SELECT * FROM room where room_id=$roomId and status=1");
+	$query->execute();
+	$rooms=$query->fetchAll();
+	$query = $db->prepare("SELECT feature_id FROM room_features where room_id=$roomId");
+	$query->execute();
+	$featuresSelected=$query->fetchAll();
+}
+?>
 <!--single-page-->
 <div class="single-page">
 	<div class="container">
 		<div class="col-md-8 single-gd-lt">
 			<div class="single-pg-hdr">
-				<h2><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>Grand Park Hyatt</h2>
-				<p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
-				<p>Jump to: <a href="single.php">Over View</a>|<a href="single.php">Room Choices</a>|<a href="single.php">Hotel Information</a></p>
+				<h2><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $rooms[0]["room_type"] ?></h2>
+				<p>Max Occupancy: <?php echo $rooms[0]["max_occupancy"]?></p>
+				<span><b>Booking from:</b> <?php echo $_SESSION["check_in"]?>
+				<b>Booking to:</b> <?php echo $_SESSION["check_out"]?></span>
+				<img src="<?php echo $rooms[0]["image_url"] ?>" alt="" width="70%" height="70%"/>
 			</div>
-			<div class="flexslider">
-							<ul class="slides">
-								<li data-thumb="images/bbb.jpg">
-									<img src="images/bbb.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ccc.jpg">
-									<img src="images/ccc.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ddd.jpg">
-									<img src="images/ddd.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/eee.jpg">
-									<img src="images/eee.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ggg.jpg">
-									<img src="images/ggg.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/bbb.jpg">
-									<img src="images/bbb.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ccc.jpg">
-									<img src="images/ccc.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ddd.jpg">
-									<img src="images/ddd.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/eee.jpg">
-									<img src="images/eee.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ggg.jpg">
-									<img src="images/ggg.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/bbb.jpg">
-									<img src="images/bbb.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ccc.jpg">
-									<img src="images/ccc.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ddd.jpg">
-									<img src="images/ddd.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/eee.jpg">
-									<img src="images/eee.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ggg.jpg">
-									<img src="images/ggg.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ccc.jpg">
-									<img src="images/ccc.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ddd.jpg">
-									<img src="images/ddd.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/bbb.jpg">
-									<img src="images/bbb.jpg" alt=""/>
-								</li>
-								<li data-thumb="images/ccc.jpg">
-									<img src="images/ccc.jpg" alt=""/>
-								</li>
-							</ul>
-			</div>
-						<!-- FlexSlider -->
-					<script defer src="js/jquery.flexslider.js"></script>
-						<script>
-						// Can also be used with $(document).ready()
-						$(window).load(function() {
-						  $('.flexslider').flexslider({
-							animation: "slide",
-							controlNav: "thumbnails"
-						  });
-						});
-						</script>
-
 		</div>
 		<div class="col-md-4 single-gd-rt">
 			<div class="spl-btn">
@@ -177,37 +39,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 				</div>
 				<div class="sp-bor-btn text-right">
-					<h4><span>$8,750</span> $4,850</h4>
+					<h4 name="price"><span>$<?php echo $rooms[0]["price"]+50?></span> $<?php echo $rooms[0]["price"]?></h4>
 					<p class="best-pri">Best price</p>
-					<a class="best-btn" href="booking.php">Book Now</a>
+					<form method="post">
+						<div class="search">
+							<input type="submit" name="booknow" value="Book Now" />
+						</div>
+					</form>
 				</div>
 			</div>
-			<div class="map-gd">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63718.72916803739!2d102.31975295000002!3d3.489618449999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ceba2007355f81%3A0xd2ff1ad6a3ca801!2sMentakab%2C+Pahang%2C+Malaysia!5e0!3m2!1sen!2sin!4v1439535856431"></iframe>
-			</div>
-			<div class="other-comments">
-				<div class="comments-head">
-					<h3>Excellent</h3>
-					<p>4.5/5</p>
-					<div class="clearfix"></div>
-				</div>
-				<div class="comments-bot">
-					<p>"Food and rooms are very good to stay. Iam very happy to stay in such a nice hotel".</p>
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> John Doe</h4>
-				</div>
-				<div class="comments-bot">
-					<p>"This is the 19th visit for me. Overall very happy with the service, the breakfast spread & the efficiency of the staff. ".</p>
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Luther</h4>
-				</div>
-				<div class="comments-bot">
-					<p>"A very pleasant hotel with good staff and a great attitude.".</p>
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Patrick</h4>
-				</div>
-			</div>
-		</div>
 		<div class="clearfix"></div>
 	</div>
 </div>
+</div>
+<?php
+	if(isset($_POST["booknow"])){
+		$src = $_GET["src"];
+		$roomId = $_GET["roomId"];
+		if($src === "wishlist"){
+			validateInfo($roomId);
+		}
+	}
+	function validateInfo($roomId){
+		$userId = $_SESSION["sess_userid"];
+		$query = "(select b.room_id from bookings b
+		where r.room_id = b.room_id and 
+		(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+		('$check_out' >= b.checkin and '$check_out' <= b.checkout ))";
+	}
+?>
 <!--//single-page-->
 <!--footer-->
 <div class="footer">
@@ -253,29 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--footer-->
 <!-- copy -->
 <div class="copy-right">
-	<div class="container">
-			<p> &copy; 2015 Classic Hotel. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
-	</div>
+<div class="container">
+	<p> &copy;2017 Comet Inn. All Rights Reserved | Design by  PHP</p>
 </div>
-<!-- //copy -->
-<!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
-<!-- //for bootstrap working -->
-<!-- smooth scrolling -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-		/*
-			var defaults = {
-			containerID: 'toTop', // fading element id
-			containerHoverID: 'toTopHover', // fading element hover id
-			scrollSpeed: 1200,
-			easingType: 'linear' 
-			};
-		*/								
-		$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
-	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!-- //smooth scrolling -->
-</body>
-</html>
+</div>

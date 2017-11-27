@@ -4,16 +4,14 @@ session_start();
 /* if(!isset($_SESSION[USERINFO][USERNAME_COLUMN])){
     header("Location:login.php");
 } */
-if(isset($_SESSION[USERINFO][USERNAME_COLUMN])){
-    $user = true;
-}else{
-    $user = false;
+if(isset($_SESSION["sess_userid"])){
+    if($_SESSION["sess_userid"] != 1){
+        $user = true;
+    }else{
+        $user = false;
+    }
 }
-if($user){
-    ?><title>Classic Hotel a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title><?php
-}else{
-    ?><title>Comet Inn</title><?php
-}
+
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -61,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
                         <li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
                         <?php
-                        if(!$user){?>
+                        if(!$user && isset($_SESSION["sess_userid"])){?>
                         <li>
                             <div class="dropdown1">
                                 <div class="dropbtn" onclick="myFunction()">ADMIN
@@ -71,8 +69,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <a href="usersList.php?page=1">USERS LIST</a>
                                     <a href="roomInfo.php">Rooms List</a>
                                     <a href="manageHotel.php">Manage Hotel</a>
+                                    <a href="logout.php">Logout</a>
                                 </div>
-                            </div> 
+                            </div>
+                        </li>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                        if($user && isset($_SESSION["sess_userid"])){?>
+                        <li>
+                            <div class="dropdown1">
+                                <div class="dropbtn" onclick="myFunction()"><?php echo $_SESSION["sess_name"] ?>
+                                <i class="fa fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown-content" id="myDropdown">
+                                    <a href="editProfile.php">Edit Profile</a>
+                                    <a href="bookings.php">View Bookings</a>
+                                    <a href="logout.php">Logout</a>
+                                </div>
+                            </div>
                         </li>
                             <?php
                         }

@@ -44,6 +44,10 @@
                 </div>
             </div>
         <?php } ?>
-        <a href="addCity.php">Add City</a>
+    </div>
+    <div class="container">
+        <div class="hotel-cities">
+            <a href="addCity.php">Add City</a>
+        </div>
     </div>
 </div>

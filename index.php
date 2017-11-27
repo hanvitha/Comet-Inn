@@ -136,8 +136,8 @@ exit();
         $_SESSION["sess_userid"]=$row['user_id'];
         $_SESSION["sess_name"]=$row['name'];
         mysqli_close($con);
-        session_write_close();
-        header("Location: home.php");
+		session_write_close();
+		echo '<script type="text/javascript">location.href = "home.php";</script>';
     }
     else
     {

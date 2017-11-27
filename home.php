@@ -114,6 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="sf-dates">
 						<label for="checkin" > Check-in : </label><input type="date" name ="check_in" value=""/>				
 						<label for="checkout" > Check-out : </label><input type="date" name ="check_out"  value=""/>
+						<label for="noOfPersons" > # of People : </label><input type="number" style="width:20%" name ="noOfPersons"  value=""/>
 					</div>
 					<div class="search">
 							<input type="submit" name="search" value="search">
@@ -126,6 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								$_SESSION["check_in"] = $_POST['check_in'];
 								$_SESSION["check_out"] = $_POST['check_out'];
 								$_SESSION["noOfPersons"] = $_POST['noOfPersons'];
+								$_SESSION["hotel_id"] = $_POST["hotel_id"];
 								echo '<script type="text/javascript">location.href = "search.php";</script>';								
 							}
 							?>

@@ -510,7 +510,7 @@ float:right;
 .sort-by select {
 	float: left;
   background: url(../images/nav.png) no-repeat 6px 7px #fff;
-  width: 100%;
+  width: 70%;
   height: 35px;
   border: 1px solid #fff;
   outline: none;

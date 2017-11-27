@@ -201,13 +201,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-9 search-grid-right">
 				<?php 
-					// $hotel_id = $_POST["hotel_id"];
-					// $check_in = $_POST["check_in"];
-					// $check_out = $_POST["check_out"];
-					
-					$hotel_id = '1';
-					$check_in = '2018/11/13';
-					$check_out = '2018/11/14';
+					$hotel_id = $_SESSION["hotel_id"];
+					$check_in = $_SESSION["check_in"];
+					$check_out = $_SESSION["check_out"];
+					$occupancy =  $_SESSION['noOfPersons'];
 					
 					require_once('config.php');
 					try{ 
@@ -219,7 +216,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						$query = 
 							"SELECT count(*) as count from room r
-							where hotel_id='$hotel_id' and r.room_id NOT IN 
+							where hotel_id='$hotel_id' and max_occupancy <= $occupancy and r.room_id NOT IN 
 							(select b.room_id from bookings b
 							where r.room_id = b.room_id and 
 							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -262,7 +259,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 						// Prepare the paged query
 						$stmt = "SELECT * from room r
-								where hotel_id='$hotel_id' and r.room_id NOT IN 
+								where hotel_id='$hotel_id' and max_occupancy <= $occupancy and r.room_id NOT IN 
 								(select b.room_id from bookings b
 								where r.room_id = b.room_id and 
 								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -306,7 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
 									<p>Best price</p>
-									<a href="single.php">Continue</a>
+									<a href="single.php?roomId=<?php echo $room_id;?>&src=search">Continue</a>
 								</div>
 								<div class="clearfix"></div>
 								

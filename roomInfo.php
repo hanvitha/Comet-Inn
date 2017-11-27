@@ -34,6 +34,7 @@
                                     <option value="<?php echo $rows[$i]["hotel_id"]?>" <?php if( isset($_GET['city']) && $_GET['city'] === $rows[$i]["hotel_id"]) echo ' selected="selected"' ?> ><?php echo $rows[$i]["city_name"]?></option>  
                                 <?php } ?>
                             </select>
+                            <input type="hidden" name="page" value="1"/>
                         </div>
                     </div>
                     <div class="search">
@@ -100,6 +101,30 @@
                             </div>
                             <?php }?>
                             <a href="addRoom.php?hotelId=<?php echo $hotel_id?>">Add Room</a>
+                            <nav>
+                                <ul class="pagination pagination-lg">
+                                
+                                <?php
+                                $currentPage = $_GET["page"];
+                                $city = $_GET["city"];
+                                $start = $currentPage*5 - 5;
+                                $end = $currentPage*5;
+                                $query = $db->prepare("SELECT * FROM room where hotel_id = $city and status=1");
+                                $query->execute();
+                                $rows=$query->fetchAll();
+                                $noOfPages = ceil(count($rows)/5);
+                                $i = 0;
+                                ?>
+                                <li><a href="roomInfo.php?search=search&city=<?php echo $city ?>&page=<?php echo $currentPage - 1 ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                <?php
+                                while($i < $noOfPages){?>
+                                    <li><a href="roomInfo.php?search=search&city=<?php echo $city ?>?page=<?php echo $i+1 ?>"><?php echo $i+1 ?></a></li>
+                                    <?php
+                                    $i++;
+                                }?>
+                                <li><a href="roomInfo.php?search=search&city=<?php echo $city ?>?page=<?php echo $currentPage + 1 ?>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                </ul>
+                            </nav>
                             <?php
                     }catch(PDOException $ex){
                         echo $ex->getMessage(); 
