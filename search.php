@@ -213,7 +213,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						if ($db->connect_error) {
 							die("Connection failed: " . $db->connect_error);
 						} 
-						
+					if(true)
+					{
+						if(isset($_GET['room_id']))
+						{
+							$user_id = $_SESSION['sess_userid'];
+							$room_id = $_GET['room_id'];
+							
+	
+							$check =  "SELECT * FROM wishlist WHERE room_id = '$room_id' and user_id='$user_id'";
+							$result = mysqli_query($db,$check);
+							$row = mysqli_fetch_array($result);
+	
+							if(mysqli_num_rows($result)>0 && $row['room_id']==$room_id)
+							{
+								//unset($_POST);
+								echo "<script type='text/javascript'>alert('Room already exists in your wishlist!');</script>"; 
+							}
+							else{
+							$query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`,`num_of_people`)
+										VALUES ('$user_id', '$room_id', '$checkin', '$checkout', '$occupancy')";
+							if (mysqli_query($db, $query1)) {
+								echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
+							} else {
+								//change this content
+								echo "Error: " . $query1 . "<br>" . mysqli_error($db);
+							}
+							}
+						}
+					}
+
 						$query = 
 							"SELECT count(*) as count from room r
 							where hotel_id='$hotel_id' and max_occupancy <= $occupancy and r.room_id NOT IN 
@@ -298,7 +327,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 								<div class="hotel-right text-right">
 									<div>
-										<a style="background:white" href='wishlist.php?room_id=<?php echo $room_id?>'>
+										<a style="background:white" href='search.php?room_id=<?php echo $room_id?>'>
 										<img id = "wishlistImg" src="images/wishlist1.png" title="Add to wishlist" onmouseover="this.src='images/wishlist2.png'" onmouseout="this.src='images/wishlist1.png'" /></a>									
 									</div>
 									<h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>

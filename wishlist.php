@@ -42,7 +42,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      <h3 class="tittle"> <?php echo $_SESSION["sess_name"]?>'s Wishlist</h2>
 
         <?php 
-            require_once('config.php');
             try{ 
                 $db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);  
                 
@@ -51,37 +50,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 } 
                 //user id set condition
                 if(true){
-                    if(isset($_GET['room_id']) && !isset($_GET['delete']))
-                    {
-                        $user_id = $_SESSION['sess_userid'];
-                        $room_id = $_GET['room_id'];
-                        $checkin = $_SESSION['check_in'];
-                        $checkout = $_SESSION['check_out'];
-                        $noOfPersons = $_SESSION['noOfPersons'];
-
-                        $check =  "SELECT * FROM wishlist WHERE room_id = '$room_id'";
-                        $result = mysqli_query($db,$check);
-                        $row = mysqli_fetch_array($result);
-
-                        if(mysqli_num_rows($result)>0 && $row['room_id']==$room_id)
-                        {
-                            //unset($_POST);
-                            echo "<script type='text/javascript'>alert('Room already exists in your wishlist!');</script>"; 
-                        }
-                        else{
-                        $query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`,`num_of_people`)
-                                    VALUES ('$user_id', '$room_id', '$checkin', '$checkout', '$noOfPersons')";
-                        if (mysqli_query($db, $query1)) {
-                            echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
-                        } else {
-                            //change this content
-                            echo "Error: " . $query1 . "<br>" . mysqli_error($db);
-                        }
-                        }
-                    }
-
+                    $user_id = $_SESSION['sess_userid'];                        
+                    
                     if(isset($_GET['delete'])){
-                        $user_id = $_SESSION['sess_userid'];                        
                         $room_id = $_GET['room_id'];
                         $querydelete = "DELETE from wishlist where room_id='$room_id' && user_id='$user_id'";
                         if (mysqli_query($db, $querydelete)) {
