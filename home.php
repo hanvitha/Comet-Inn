@@ -25,19 +25,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/chocolat.css" rel="stylesheet">
 <!-- js -->
 <script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
 <!-- //js -->
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 	<!-- start-smooth-scrolling -->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
+
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
 					event.preventDefault();
 					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
+				});  			
+				
 			});
+
+			
 		</script>
+		<script type="text/javascript" src="js/datecheck.js"></script>
+
 	<!-- start-smoth-scrolling -->
 </head>
 <body>
@@ -116,8 +124,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					
 					<div class="sf-dates">
-						<label for="checkin" > Check-in : </label><input type="date" name ="check_in" value=""/>				
-						<label for="checkout" > Check-out : </label><input type="date" name ="check_out"  value=""/>
+						<label for="checkin" > Check-in : </label><input type="text" id="checkin" name ="check_in" value=""/>				
+						<label for="checkout" > Check-out : </label><input type="text" id="checkout" name ="check_out"  value=""/>
 						<label for="noOfPersons" > # of People : </label><input type="number" style="width:20%" name ="noOfPersons"  value=""/>
 					</div>
 					<div class="search">
