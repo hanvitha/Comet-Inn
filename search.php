@@ -134,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								}
 								else{
 								$query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`,`num_of_people`)
-											VALUES ('$user_id', '$room_id', '$checkin', '$checkout', '$occupancy')";
+											VALUES ('$user_id', '$room_id', '$check_in', '$check_out', '$occupancy')";
 								if (mysqli_query($db, $query1)) {
 									echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
 								} else {
@@ -225,7 +225,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									<div class="hotel-right text-right">
 										<div>
-											<a style="background:white" href='wishlist.php?room_id=<?php echo $room_id?>'>
+											<a style="background:white" href='search.php?room_id=<?php echo $room_id?>'>
 											<img id = "wishlistImg" src="images/wishlist1.png" title="Add to wishlist" onmouseover="this.src='images/wishlist2.png'" onmouseout="this.src='images/wishlist1.png'" /></a>									
 										</div>
 										<h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
@@ -258,7 +258,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 					if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name..."){
 						$name_filter = $_POST['filter_text'];
-						echo $name_filter;
 						$name_filter_flag = true;
 					}else{
 						$name_filter_flag = false;
