@@ -1578,6 +1578,9 @@ h5.typ1{
 .progress-bar-inverse {
   background-color: #757575;
 }
+.pagination > li > a, .pagination >li > span {
+	color: #464646;
+}
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   background-color:#5bb2fc !important;
   border-color:#5bb2fc !important;
@@ -2144,15 +2147,7 @@ margin:10px 0px;
   position: relative;
   font-size: 19px;
 }
-.rating > span:hover,.rating > span:hover ~ span {
-color: transparent;
-}
-.rating > span:hover:before,.rating > span:hover ~ span:before {
-content: "\2605";
-position: absolute;
-left: 0;
-color: #DF1E1C;
-}
+
 /* stop ratings */
 .hotel-left-two a{
   font-family: 'OpenSans-Regular';

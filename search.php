@@ -45,47 +45,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="search-grids">
 			<div class="col-md-3 search-grid-left">
 				
-				
 				<div class="search-hotel">
 					<h3 class="sear-head">Name contains</h3>
-					<form method="POST" action="search.php">
+					<form method="POST">
 						<input type="text" name="filter_text" value="Hotel name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Hotel name...';}" required="">
 						<input type="submit" name="name_filter" value=" ">
 					</form>
 				</div>
-				
-				<div class="range">
-				<script type="text/javascript" src="js/jquery-ui.js"></script>
-
-					<h3 class="sear-head">Average nightly rate</h3>
-							<ul class="dropdown-menu6">
-								<li>
-									                
-									<div id="slider-range"></div>							
-										<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-									</li>			
-							</ul>
-							<!---->
-							<script type='text/javascript'>//<![CDATA[ 
-							$(window).load(function(){
-							 $( "#slider-range" ).slider({
-										range: true,
-										min: 0,
-										max: 900,
-										values: [ 20, 600 ],
-										slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-										}
-							 });
-							$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-							});//]]>  
-
-							</script>
+				<div class="menu-grid">
+				<ul class="menu_drop">
+					<li class="item1"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Features</a>
+						<ul>
+							<li class="subitem1"><a href="search.php?page=1&feature=1">Roll-in shower </a></li>
+							<li class="subitem2"><a href="search.php?page=1&feature=2">Comfortable bathroom</a></li>
+							<li class="subitem3"><a href="search.php?page=1&feature=3">WI-FI facility</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- script for tabs -->
+					<script type="text/javascript">
+						$(function() {
+						
+							var menu_ul = $('.menu_drop > li > ul'),
+									menu_a  = $('.menu_drop > li > a');
 							
-				</div>
-				
-				
-				
-				
+							menu_ul.hide();
+						
+							menu_a.click(function(e) {
+								e.preventDefault();
+								if(!$(this).hasClass('active')) {
+									menu_a.removeClass('active');
+									menu_ul.filter(':visible').slideUp('normal');
+									$(this).addClass('active').next().stop(true,true).slideDown('normal');
+								} else {
+									$(this).removeClass('active');
+									$(this).next().stop(true,true).slideUp('normal');
+								}
+							});
+						
+						});
+					</script>
+				<!-- script for tabs -->
+
+			</div>
 			</div>
 			<div class="col-md-9 search-grid-right">
 				<?php 
@@ -94,6 +96,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					$check_out = $_SESSION["check_out"];
 					$occupancy =  $_SESSION['noOfPersons'];
 					
+					if($_GET["page"])
+						$pageNumber = $_GET["page"];
+					else
+						$pageNumber = 1;
+					
+					$start = $pageNumber*5 - 5;
+					$end = $pageNumber*5;
+					if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name..."){
+						$name_filter = $_POST['filter_text'];
+						$name_filter_flag = true;
+					}else{
+						$name_filter_flag = false;
+					}
+					
 					require_once('config.php');
 					try{ 
 						$db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);  
@@ -101,165 +117,211 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						if ($db->connect_error) {
 							die("Connection failed: " . $db->connect_error);
 						} 
-					if(true)
-					{
 						if(isset($_GET['room_id']))
-						{
-							$user_id = $_SESSION['sess_userid'];
-							$room_id = $_GET['room_id'];
-							
-	
-							$check =  "SELECT * FROM wishlist WHERE room_id = '$room_id' and user_id='$user_id'";
-							$result = mysqli_query($db,$check);
-							$row = mysqli_fetch_array($result);
-	
-							if(mysqli_num_rows($result)>0 && $row['room_id']==$room_id)
 							{
-								//unset($_POST);
-								echo "<script type='text/javascript'>alert('Room already exists in your wishlist!');</script>"; 
-							}
-							else{
-							$query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`,`num_of_people`)
-										VALUES ('$user_id', '$room_id', '$checkin', '$checkout', '$occupancy')";
-							if (mysqli_query($db, $query1)) {
-								echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
-							} else {
-								//change this content
-								echo "Error: " . $query1 . "<br>" . mysqli_error($db);
-							}
-							}
+								$user_id = $_SESSION['sess_userid'];
+								$room_id = $_GET['room_id'];
+								
+		
+								$check =  "SELECT * FROM wishlist WHERE room_id = '$room_id' and user_id='$user_id'";
+								$result = mysqli_query($db,$check);
+								$row = mysqli_fetch_array($result);
+		
+								if(mysqli_num_rows($result)>0 && $row['room_id']==$room_id)
+								{
+									//unset($_POST);
+									echo "<script type='text/javascript'>alert('Room already exists in your wishlist!');</script>"; 
+								}
+								else{
+								$query1 = "INSERT INTO wishlist (`user_id`, `room_id`,`checkin`,`checkout`,`num_of_people`)
+											VALUES ('$user_id', '$room_id', '$checkin', '$checkout', '$occupancy')";
+								if (mysqli_query($db, $query1)) {
+									echo "<script type='text/javascript'>alert('New room added to your wishlist!');</script>"; 
+								} else {
+									//change this content
+									echo "Error: " . $query1 . "<br>" . mysqli_error($db);
+								}
+								}
 						}
-					}
-					if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name...")
-					{		
-						$name_filter = $_POST['filter_text'];			
-						$query = 
-							"SELECT count(*) as count from room r
-							where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
-							(select b.room_id from bookings b
-							where r.room_id = b.room_id and 
-							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
-							('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
-							and r.room_type like '%$name_filter%';";						
-					}else
-						$query = 
-						"SELECT count(*) as count from room r
-						where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
-						(select b.room_id from bookings b
-						where r.room_id = b.room_id and 
-						(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
-						('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";						
-					
-						// Find out how many items are in the table
-						
-						$result = $db->query($query)->fetch_assoc();
-						$total = $result['count'][0];
-						
-						// How many items to list per page
-						$limit = 2;
-					
-						// How many pages will there be
-						$pages = ceil($total / $limit);
-					
-						// What page are we currently on?
-						$page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array(
-							'options' => array(
-								'default'   => 1,
-								'min_range' => 1,
-							),
-						)));
-					
-						// Calculate the offset for the query
-						$offset = ($page - 1)  * $limit;
-					
-						// Some information to display to the user
-						$start = $offset + 1;
-						$end = min(($offset + $limit), $total);
-					
-						// The "back" link
-						$prevlink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a> <a href="?page=' . ($page - 1) . '" title="Previous page">&lsaquo;</a>' : '<span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>';
-					
-						// The "forward" link
-						$nextlink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page">&rsaquo;</a> <a href="?page=' . $pages . '" title="Last page">&raquo;</a>' : '<span class="disabled">&rsaquo;</span> <span class="disabled">&raquo;</span>';
-					
-						// Display the paging information
-						echo '<div style="float:right" id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div><br><br>';
-					
-						// Prepare the paged query
-						if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name...")
-						{
-						$filter=$_POST['filter_text'];
-						$stmt = "SELECT * from room r
-						where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
-						(select b.room_id from bookings b
-						where r.room_id = b.room_id and 
-						(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
-						('$check_out' >= b.checkin and '$check_out' <= b.checkout ))) 
-						and r.room_type like '%$filter%'
-						LIMIT $limit OFFSET $offset;";
-						}
-						else
-						$stmt = "SELECT * from room r
+						//both name and feature filter
+						if($name_filter_flag && isset($_GET["feature"]))
+						{		
+							$feature_id = $_GET["feature"];		
+							$query = 
+								"SELECT * from room r
+								join room_features f1
+								on r.room_id = f1.room_id and f1.feature_id='$feature_id'
 								where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
 								(select b.room_id from bookings b
 								where r.room_id = b.room_id and 
 								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+								('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
+								and r.room_type like '%$name_filter%' limit $start, $end;";						
+						}else if($name_filter_flag){
+							$query = 
+								"SELECT * from room r
+								where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+								(select b.room_id from bookings b
+								where r.room_id = b.room_id and 
+								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+								('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
+								and r.room_type like '%$name_filter%' limit $start, $end;;";
+							
+						}else if(isset($_GET["feature"])){
+							$feature_id = $_GET["feature"];
+							$query = "SELECT * from room r 
+								join room_features f1
+								on r.room_id = f1.room_id and f1.feature_id='$feature_id'
+								where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+								(select b.room_id from bookings b
+								where r.room_id = b.room_id and 
+								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
 								('$check_out' >= b.checkin and '$check_out' <= b.checkout ))) 
-								LIMIT $limit OFFSET $offset;";	
+								limit $start, $end;";
+						}else{
+							$query = "SELECT * from room r
+							where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+							(select b.room_id from bookings b
+							where r.room_id = b.room_id and 
+							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+							('$check_out' >= b.checkin and '$check_out' <= b.checkout ))) 
+							limit $start, $end;";						
+						}
 						
-						$result1 = $db->query($stmt);
-						// Do we have any results?
-						if ($result1->num_rows > 0) {
-						// Define how we want to fetch the results
-						while ($row = $result1->fetch_assoc()) { 
-							$room_id = $row['room_id']; ?>
-							<div class="hotel-rooms">
-								<div class="hotel-left">
-									<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
-									<p><?php echo $row['room_desc'] ?></p>
-									<div class="hotel-left-grids">
-										<div class="hotel-left-one">
-											<a href="single.html"><img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" /></a>
-										</div>
-										<div class="hotel-left-two">
-											<div class="rating text-left">
-												<span><img src ="images/st<?php echo $row['customer_rating']; ?>.png"</span>
+						$result = $db->query($query);
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) { 
+								$room_id = $row['room_id']; ?>
+								<div class="hotel-rooms">
+									<div class="hotel-left">
+										<a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
+										<p><?php echo $row['room_desc'] ?></p>
+										<div class="hotel-left-grids">
+											<div class="hotel-left-one">
+												<a href="single.html"><img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" /></a>
 											</div>
-											<div class="rating text-left">
-											<?php
-												
-												$query2 = "select f1.feature_name from room a inner join room_features b on a.room_id=b.room_id inner join features f1 on b.feature_id=f1.feature_id where room_id = '$room_id';";
-						
-											?>
+											<div class="hotel-left-two">
+												<div class="rating text-left">
+													<span><img alt="Customer Rating" src ="images/st<?php echo $row['customer_rating']; ?>.png"</span>
+												</div>
+												<div class="rating text-left">
+												<?php
+													
+													$query2 = "select f1.feature_name from room a inner join room_features b on a.room_id=b.room_id inner join features f1 on b.feature_id=f1.feature_id where a.room_id = '$room_id';";
+													$result2 = $db->query($query2);
+													if ($result2->num_rows > 0) {
+														echo '<h5><b>Available Features</b></h5>';
+														while ($row2 = $result2->fetch_assoc()) { 
+															$feature = $row2['feature_name'];
+															echo "<p>$feature</p>";
+														}
+													}
+												?>
+												</div>
 											</div>
+											<div class="clearfix"></div>
 										</div>
-										<div class="clearfix"></div>
 									</div>
-								</div>
-								
-								<div class="hotel-right text-right">
-									<div>
-										<a style="background:white" href='search.php?room_id=<?php echo $room_id?>'>
-										<img id = "wishlistImg" src="images/wishlist1.png" title="Add to wishlist" onmouseover="this.src='images/wishlist2.png'" onmouseout="this.src='images/wishlist1.png'" /></a>									
+									
+									<div class="hotel-right text-right">
+										<div>
+											<a style="background:white" href='wishlist.php?room_id=<?php echo $room_id?>'>
+											<img id = "wishlistImg" src="images/wishlist1.png" title="Add to wishlist" onmouseover="this.src='images/wishlist2.png'" onmouseout="this.src='images/wishlist1.png'" /></a>									
+										</div>
+										<h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
+										<p>Best price</p>
+										<a href="single.php?roomId=<?php echo $room_id;?>&src=search">Continue</a>
 									</div>
-									<h4><span><?php echo $row['price']+rand(2, 100) ?></span><?php echo "  ".$row['price']?></h4>
-									<p>Best price</p>
-									<a href="single.php?roomId=<?php echo $room_id;?>&src=search">Continue</a>
+									<div class="clearfix"></div>
+									
 								</div>
-								<div class="clearfix"></div>
-								
-							</div>
-							<?php
+								<?php
 							}
 							}else {
-								echo '<p>No results could be displayed.</p>';
+								echo '<p>No results to display.</p>';
 							}
 				
 						} catch (Exception $e) {
 							echo '<p>', $e->getMessage(), '</p>';
 						}
 				?>
-				
+				<div>
+                <nav>
+				  <ul class="pagination pagination-lg">
+                    
+                    <?php
+					if(isset($_GET["page"])){
+						$currentPage = $_GET["page"];
+					}else{
+						$currentPage = 1;
+					}
+					
+					if(isset($_POST['name_filter']) && $_POST['filter_text']!="Hotel name..."){
+						$name_filter = $_POST['filter_text'];
+						echo $name_filter;
+						$name_filter_flag = true;
+					}else{
+						$name_filter_flag = false;
+					}
+
+					if($name_filter_flag && isset($_GET["feature"]))
+					{		
+						$feature_id = $_GET["feature"];		
+						$query = 
+							"SELECT * from room r
+							join room_features f1
+							on r.room_id = f1.room_id and f1.feature_id='$feature_id'
+							where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+							(select b.room_id from bookings b
+							where r.room_id = b.room_id and 
+							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+							('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
+							and r.room_type like '%$name_filter%'";						
+					}else if($name_filter_flag){
+						$query = 
+							"SELECT * from room r
+							where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+							(select b.room_id from bookings b
+							where r.room_id = b.room_id and 
+							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+							('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
+							and r.room_type like '%$name_filter%'";	
+					}else if(isset($_GET["feature"])){
+						$feature_id = $_GET["feature"];
+						$query = "SELECT * from room r 
+							join room_features f1
+							on r.room_id = f1.room_id and f1.feature_id='$feature_id'
+							where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+							(select b.room_id from bookings b
+							where r.room_id = b.room_id and 
+							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+							('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";
+					}else{
+						$query = "SELECT * from room r
+						where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+						(select b.room_id from bookings b
+						where r.room_id = b.room_id and 
+						(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
+						('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";
+					}
+                   
+                    $result = $db->query($query);
+					// Do we have any results?
+					$rows = $result->num_rows;
+                    $noOfPages = ceil(count($rows)/5);
+					 $i = 0;
+                     ?>
+                     <li><a href="search.php?page=<?php echo $currentPage - 1 ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                     <?php
+                     while($i < $noOfPages){?>
+                        <li><a href="search.php?page=<?php echo $i+1 ?>"><?php echo $i+1 ?></a></li>
+                     <?php
+                        $i++;
+                    }?>
+					<li><a href="search.php?page=<?php echo $currentPage + 1 ?>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+				  </ul>
+				  </nav>
+                </div>
 		</div>
 	</div>
 </div>
