@@ -49,7 +49,7 @@ if(!isset($_SESSION["sess_userid"])){
             $phone = $db->quote($_POST["phone"]);
             $updateQuery =  $db->prepare("UPDATE user SET name=$name, email_id=$email, phone=$phone WHERE user_id=$id");  
             $result = $updateQuery->execute();
-            echo '<script type="text/javascript">location.href = "usersList.php";</script>';
+            echo '<script type="text/javascript">location.href = "usersList.php?page=1";</script>';
             //header("Location:usersList.php");
         }catch(PDOException $ex){
             echo "<script type='text/javascript'>alert('$ex->getMessage();');</script>"; 

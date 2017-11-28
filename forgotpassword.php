@@ -5,7 +5,7 @@ require_once('config.php');
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Home :: PHP</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -66,8 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>NAVIGATION</h3>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="typography.html">Services</a></li>						
+					<li><a href="about.html">About</a></li>				
 					<li><a href="booking.html">Booking</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
@@ -104,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- copy -->
 <div class="copy-right">
 	<div class="container">
-			<div> &copy; 2015 Comet Inn. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></div>
+			<div> &copy; 2017 Comet Inn. All Rights Reserved | Design by  <a href="#"> PHP</a></div>
 	</div>
 </div>
 <!-- //copy -->

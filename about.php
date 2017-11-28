@@ -1,13 +1,13 @@
 <!--
-Author: W3layouts
-Author URL: http://w3layouts.com
+Author: PHP
+Author URL: http://PHP.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | About :: w3layouts</title>
+<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | About :: PHP</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -46,8 +46,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="about-bottom text-center">
 				<img src="images/abt-3.jpg" alt="" />
-				<h4>Sed hendrerit dui eget lacus imperdiet lacinia. Sed eleifend, libero ac pellentesque ornare, velit velit tempor nisi, quis cursus dolor velit condimentum elit.</h4>
-				<p>Duis semper sodales dictum. Praesent facilisis dui a viverra fringilla. Cras nisi felis, sollicitudin non bibendum iaculis, tincidunt id erat. Morbi tincidunt erat tellus, ut rhoncus sem malesuada et. Duis vitae auctor arcu. Aenean in tellus ac quam maximus dignissim. Vivamus dapibus eget mi ut consectetur. Donec risus nunc, pulvinar eu viverra vitae, placerat at nisi. Duis a mollis enim. Pellentesque sollicitudin dignissim ex, sit amet ornare dui fringilla eu.</p>
+				<h4>This project is done as a part of Web Programming Language course in University of Texas at Dallas, Fall 2017.</h4>
+				<p>This is a hotel management website for a independent franchise to manage his/her hotel bookings for different branches across the country. The website provides a smooth user transaction experience to book rooms with options to search with name, filter based on features. Also there is an admin portal where admin can add, update & soft delete users, rooms, branches.</p>
 			</div>
 		</div>
 	</div>
@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="vision">
 		<div class="container">
 			<div class="vision-top heading">
-				<h3 class="tittle">SPECIAL DELUXE ROOMS</h3>
+				<h3 class="tittle">Technical Information</h3>
 			</div>
 			<div class="vision-bottom">
 				<div class="col-md-8 vision-left">
@@ -64,19 +64,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<img src="images/13.jpg" alt="" />
 					</div>
 					<div class="col-md-7 vsn-right">
-						<h4>Praesent nunc egestas eget elementum sed; rutrum eget metus!</h4>
-						<p>Aenean eu enim imperdiet, hendrerit purus congue, semper lectus. Nullam metus urna, efficitur in tristique a, suscipit in eros. Vestibulum tincidunt mattis ante, eu lobortis arcu convallis laoreet. Vivamus vestibulum dolor vel metus finibus aliquet. Donec nibh lorem.</p>
+						<h4>Built using PHP, HTML, CSS, bootstrap, JQuery.</h4>
+						<p>The project is well built by using PHP for server and MYSQL as database. We used HTML with bootstrap for the UI.</p>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="col-md-4 vision-right">
 					<ul>
-						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Interdum et malesuada fames ac ante</a></li>
-						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Suspendisse purus justo, fringilla</a></li>
-						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Aenean eu enim imperdiet, hendrerit </a></li>
-						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Sed consequat finibus nisi, sed conval</a></li>
-						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Maecenas non lectus tristique, vesti</a></li>
-						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Quisque quis nisl eget velit laoreet</a></li>
+						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Used MD5 for password encryption.</a></li>
+						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">All input fields are validated.</a></li>
+						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Used PDO to connect to database.</a></li>
+						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Built as modular as possible.</a></li>
+						<li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><a href="#">Very minimal use of Session Variables.</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -140,7 +139,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
-					<li><a href="typography.php">Services</a></li>						
 					<li><a href="booking.php">Booking</a></li>
 					<li><a href="contact.php">Contact</a></li>
 				</ul>
@@ -177,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- copy -->
 <div class="copy-right">
 	<div class="container">
-			<p> &copy; 2015 Comet Inn. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+			<p> &copy; 2017 Comet Inn. All Rights Reserved | Design by  <a href="#"> PHP</a></p>
 	</div>
 </div>
 <!-- //copy -->

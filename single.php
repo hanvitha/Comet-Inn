@@ -215,7 +215,6 @@ if($_GET["src"] === "wishlist"){
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
-					<li><a href="typography.php">Services</a></li>					
 					<li><a href="booking.php">Booking</a></li>
 					<li><a href="contact.php">Contact</a></li>
 				</ul>

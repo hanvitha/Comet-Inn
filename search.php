@@ -9,7 +9,7 @@ if(!isset($_SESSION["sess_userid"])){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Search :: w3layouts</title>
+<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Search :: PHP</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -48,7 +48,7 @@ if(!isset($_SESSION["sess_userid"])){
                                         <td><?php echo $rows[$i]['phone']?> </td>
                                         <td>
                                             <a href="custInfo.php?id=<?php echo $rows[$i]['user_id']?>" class="btn btn-sm btn-info" data-toggle="tooltip" title="Edit & View" id="btnEdit"><span class="glyphicon glyphicon glyphicon-edit"></span></a>
-                                            <a href="usersList.php?deleteId=<?php echo $rows[$i]['user_id']?>" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete" id="btnDel"  <?php if($rows[$i]['status'] == 0) echo 'disabled';?>><span class="glyphicon glyphicon-trash"></span></a>
+                                            <a href="usersList.php?page=<?php echo $_GET['page'] ?>&deleteId=<?php echo $rows[$i]['user_id']?>" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete" id="btnDel"  <?php if($rows[$i]['status'] == 0) echo 'disabled';?>><span class="glyphicon glyphicon-trash"></span></a>
                                         </td>
                                     </tr>
                                 <?php

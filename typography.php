@@ -1,13 +1,13 @@
 <!--
-Author: W3layouts
-Author URL: http://w3layouts.com
+Author: PHP
+Author URL: http://PHP.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Typography :: w3layouts</title>
+<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Typography :: PHP</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -603,7 +603,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
-					<li><a href="typography.php">Services</a></li>						
 					<li><a href="booking.php">Booking</a></li>
 					<li><a href="contact.php">Contact</a></li>
 				</ul>
@@ -640,7 +639,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- copy -->
 <div class="copy-right">
 	<div class="container">
-			<p> &copy; 2015 Comet Inn. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+			<p> &copy; 2017 Comet Inn. All Rights Reserved | Design by  <a href="#"> PHP</a></p>
 	</div>
 </div>
 <!-- //copy -->
