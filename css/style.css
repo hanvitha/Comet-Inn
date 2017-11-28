@@ -3707,3 +3707,23 @@ font-weight:bold;
 	.sf-dates{
 		float:left;
 	}
+
+.margin-10{
+	margin-top:10px;
+}
+
+.table-singlepage{
+	width: 700px;
+}
+.green{
+	color: green;
+	text-shadow: 0 0 3px green, 0 0 5px green;
+	font-size: 17px !important;
+	text-decoration-color: green;
+}
+.red{
+	color: red;
+	text-shadow: 0 0 3px red, 0 0 5px red;
+	font-size: 17px !important ;
+	text-decoration-color: red;
+}

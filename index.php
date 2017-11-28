@@ -1,6 +1,9 @@
 <div class="banner1">
 <?php include 'menu.php';
 require_once('config.php');
+if(isset($_SESSION["sess_userid"])){
+	echo '<script type="text/javascript">location.href = "home.php";</script>';
+}
 ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

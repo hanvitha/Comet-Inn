@@ -25,7 +25,7 @@ if(!isset($_SESSION["sess_userid"])){
                         $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
                         $pageNumber = $_GET["page"];
                         $start = $pageNumber*5 - 5;
-                        $end = $pageNumber*5;
+                        $end = 5;
                         $query = $db->prepare("SELECT * FROM user where user_id > 1 and status=1 limit $start, $end");
                         $query->execute();
                         $rows=$query->fetchAll();
