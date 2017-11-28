@@ -140,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								$_SESSION["check_out"] = $_POST['check_out'];
 								$_SESSION["noOfPersons"] = $_POST['noOfPersons'];
 								$_SESSION["hotel_id"] = $_POST["hotel_id"];
-								echo '<script type="text/javascript">location.href = "search.php";</script>';								
+								echo '<script type="text/javascript">location.href = "search.php?page=1";</script>';								
 							}
 							?>
 				<div class="clearfix"></div>

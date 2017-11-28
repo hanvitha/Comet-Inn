@@ -60,8 +60,8 @@ if(!isset($_SESSION["sess_userid"])){
                         echo $ex->getMessage(); 
                     }
                 ?>
-                                </table>
-                            </div>
+                </table>
+                </div>
                 <div>
                 <nav>
 				  <ul class="pagination pagination-lg">

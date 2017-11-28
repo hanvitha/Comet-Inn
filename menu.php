@@ -21,7 +21,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/chocolat.css" rel="stylesheet">
 <!-- js -->
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -30,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/bootstrap.min.js"></script>
 <link href="css/select2.min.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="js/select2.min.js"></script>
 <script src="js/jquery.form.js"></script> 
 	<!-- start-smoth-scrolling -->
@@ -55,7 +55,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="nav1">
                         <li><a href="home.php" data-hover="HOME">HOME</a></li>
                         <li><a href="about.php" data-hover="ABOUT">ABOUT</a></li>
-                        <li><a href="typography.php" data-hover="SERVICES">SERVICES</a></li>
                         <li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
                         <li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
                         <?php
@@ -63,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <div class="dropdown1">
                                 <div class="dropbtn" onclick="myFunction()">ADMIN
-                                <i class="fa fa-caret-down"></i>
+                                
                                 </div>
                                 <div class="dropdown-content" id="myDropdown">
                                     <a href="usersList.php?page=1">USERS LIST</a>
@@ -81,7 +80,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <div class="dropdown1">
                                 <div class="dropbtn" onclick="myFunction()"><?php echo $_SESSION["sess_name"] ?>
-                                <i class="fa fa-caret-down"></i>
                                 </div>
                                 <div class="dropdown-content" id="myDropdown">
                                     <a href="editProfile.php">Edit Profile</a>

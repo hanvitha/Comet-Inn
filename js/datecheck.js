@@ -1,7 +1,7 @@
 $(document).ready(function () {
     
         $("#checkin").datepicker({
-            dateFormat: "dd-M-yy",
+            dateFormat: "yy-mm-dd",
             minDate: 0,
             onSelect: function (date) {
                 var date2 = $('#checkin').datepicker('getDate');
@@ -12,7 +12,7 @@ $(document).ready(function () {
             }
         });
         $('#checkout').datepicker({
-            dateFormat: "dd-M-yy",
+            dateFormat: "yy-mm-dd",
             onClose: function () {
                 var dt1 = $('#checkin').datepicker('getDate');
                 var dt2 = $('#checkout').datepicker('getDate');
