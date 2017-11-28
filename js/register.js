@@ -14,15 +14,20 @@ $(document).ready(function() {
 	if(len >= 8 && len<=16){  
 	$( this ).next( "p" ).text(" ").append('<i style="display:inline;color: #3a7d34;">&#10004;</i>');
 	$( this ).next( "p" ).show(); 
-
+	if( $('input[type=submit]').attr("disabled")==="disabled")
+	{
+		$('input[type=submit]').removeAttr("disabled");
+		$('input[type=submit]').css("background-color", "");
+	}
+	return true;
 	}
 	else{
 	$( this ).next( "p" ).text("Password should be between 8 and 16 characters").append('<i style="display:inline;color: #FF0000;">&#10008;</i>').show();  
-	$('#submit').click(function () {
+	//$('#submit').click(function () {
         $('input[type=submit]').attr("disabled", "disabled");
         $('input[type=submit]').css("background-color", "grey");
         return false;
-        });
+      //  });
 	}
 	});
 
@@ -33,18 +38,24 @@ $(document).ready(function() {
 
 	var input=$(this);
 	var fname=input.val();
-	var str=/^[a-zA-Z]+$/;   
+	var str=/^([a-zA-Z]+\s)*[a-zA-Z]+$/;   
 	if(fname.match(str) && fname.length<=50){
 	$( this ).next( "p" ).text(" ").append('<i style="display:inline;color: #3a7d34;">&#10004;</i>');
 	$( this ).next( "p" ).show(); 
+	if( $('input[type=submit]').attr("disabled")==="disabled")
+	{
+		$('input[type=submit]').removeAttr("disabled");
+		$('input[type=submit]').css("background-color", "");
+	}
+	return true;
 	}
 	else{
 	$( this ).next( "p" ).text("Enter a valid name").append('<i style="display:inline;color: #FF0000;">&#10008;</i>').show();  
-    $('#submit').click(function () {
+    //$('#submit').click(function () {
         $('input[type=submit]').attr("disabled", "disabled");
         $('input[type=submit]').css("background-color", "grey");
         return false;
-        });
+      //  });
 	}
 	});
 	
@@ -58,14 +69,20 @@ $(document).ready(function() {
 	if(contact.match(str) && contact.length==10){
 	$( this ).next( "p" ).text(" ").append('<i style="display:inline;color: #3a7d34;">&#10004;</i>');
 	$( this ).next( "p" ).show(); 
+	if( $('input[type=submit]').attr("disabled")==="disabled")
+	{
+		$('input[type=submit]').removeAttr("disabled");
+		$('input[type=submit]').css("background-color", "");
+	}
+	return true;
 	}
 	else{
 	$( this ).next( "p" ).text("Enter a valid contact number").append('<i style="display:inline;color: #FF0000;">&#10008;</i>').show();  
-    $('#submit').click(function () {
+    //$('#submit').click(function () {
         $('input[type=submit]').attr("disabled", "disabled");
         $('input[type=submit]').css("background-color", "grey");
         return false;
-        });
+      //  });
 	}
 	});
 	$('#email').blur('input', function() {    	
@@ -76,14 +93,20 @@ $(document).ready(function() {
 	if (validateEmail(user_email)){
 	$( this ).next( "p" ).text(" ").append('<i style="display:inline;color: #3a7d34;">&#10004;</i>');
 	$( this ).next( "p" ).show();
+	if( $('input[type=submit]').attr("disabled")==="disabled")
+	{
+		$('input[type=submit]').removeAttr("disabled");
+		$('input[type=submit]').css("background-color", "");
+	}
+	return true;
 	}
 	else{
     $( this ).next( "p" ).text("Enter a valid email").append('<i style="display:inline;color: #FF0000;">&#10008;</i>').show();
-	$('#submit').click(function () {
+	//$('#submit').click(function () {
         $('input[type=submit]').attr("disabled", "disabled");
         $('input[type=submit]').css("background-color", "grey");
         return false;
-        });
+      //  });
 	}
 	function validateEmail(user_email) {
 	var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
