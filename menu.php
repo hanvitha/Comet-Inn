@@ -68,6 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <a href="usersList.php?page=1">USERS LIST</a>
                                     <a href="roomInfo.php">Rooms List</a>
                                     <a href="manageHotel.php">Manage Hotel</a>
+                                    <a href="wishlist.php">Wishlist</a>
                                     <a href="logout.php">Logout</a>
                                 </div>
                             </div>

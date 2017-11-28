@@ -47,6 +47,10 @@ if($_GET["src"] === "wishlist"){
 	$featuresSelected=$query->fetchAll();
 }
 ?>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+<script type="text/javascript" src="js/datecheck.js"></script>
+
 <!--single-page-->
 <div class="single-page">
 	<div class="container">
@@ -69,7 +73,7 @@ if($_GET["src"] === "wishlist"){
 									<label for="checkin" class="margin-10"> Check-in : </label><br/>
 								</td>
 								<td>
-									<input type="date" name ="check_in" value="<?php echo $wishlist['checkin'] ?>" class="margin-10"/>
+									<input type="text" id="checkin" name ="check_in" value="<?php echo $wishlist['checkin'] ?>" class="margin-10"/>
 								</td>
 							</tr>
 							<tr>
@@ -77,7 +81,7 @@ if($_GET["src"] === "wishlist"){
 									<label for="checkout" class="margin-10"> Check-out : </label>
 								</td>
 								<td>
-									<input type="date" name ="check_out"  value="<?php echo $wishlist['checkout'] ?>" class="margin-10"/><br/>
+									<input type="text" id="checkout" name ="check_out"  value="<?php echo $wishlist['checkout'] ?>" class="margin-10"/><br/>
 								</td>
 							</tr>
 							<tr>
@@ -165,7 +169,7 @@ if($_GET["src"] === "wishlist"){
             $amountPaid = $db->quote($_POST["amountPaid"]);
             $insertQuery =  $db->prepare("INSERT INTO bookings(room_id, checkin, checkout, user_id, amount_paid, status) values($roomId, $check_in, $check_out,$userId,$amountPaid, 0 )");  
             $result = $insertQuery->execute();
-            echo '<script type="text/javascript">location.href = "bookings.php";</script>';
+            echo '<script type="text/javascript">location.href = "booking.php";</script>';
             //header("Location:roomInfo.php"); */
         }catch(PDOException $ex){
             echo "<script type='text/javascript'>alert('$ex->getMessage();');</script>"; 
