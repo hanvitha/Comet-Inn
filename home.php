@@ -82,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li>
 						<div class="banner-text">
 							<h3>WELCOME</h3>
-							<h4>RELAX AND EXPERIENCE SOMETHING AWESOME</h4>
+							<h4>EXPERIENCE SOMETHING AWESOME</h4>
 						</div>
 					</li>
 					<li>
@@ -153,13 +153,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="banner-pos-grids">
 			<div class="ban-pos-gridone">
-				<h3>Featured Hotel</h3>
+				<h3>Features</h3>
 				<div class="ban-pos-info l-grids">
 					<figure class="effect-bubba">
 							<img src="images/4.jpg" alt=""/>
 							<figcaption>
 								<h4>Comet Inn</h4>
-								<p>In officiis debitis aut rerum tincidunt labore dolore magna</p>																
+								<p>Luxurious Hotels with all the hi-tech facilities.</p>																
 							</figcaption>			
 					</figure>
 				</div>
@@ -170,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<img src="images/6.jpg" alt=""/>
 							<figcaption>
 								<h4>Comet Inn</h4>
-								<p>In sit amet sapien eros Integerore et dolore magna aliqua. In sit tincidunt magna aliqua rerum tincidunt</p>														
+								<p>Stunning interiors with all the comforts you need.</p>														
 							</figcaption>			
 					</figure>
 				</div>
@@ -181,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<img src="images/5.jpg" alt=""/>
 							<figcaption>
 								<h4>Comet Inn</h4>
-								<p>In sit amet sapien eros Integerore et dolore magna aliqua. In sit tincidunt magna aliqua rerum tincidunt</p>																
+								<p>Relax and enjoy your stay with us.</p>																
 							</figcaption>			
 					</figure>
 				</div>
@@ -198,30 +198,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="welcome-grids">
 			<div class="col-md-4 welcome-left">
 				<ul>
-					<li><a href="#">Lorem Ipsum is not simply random text.</a></li>
-					<li><a href="#">There are many variations of passages.</a></li>
-					<li><a href="#">The standard chunk of Lorem Ipsum.</a></li>
+					<li><a href="#">Luxurious hotels with various amenities</a></li>
+					<li><a href="#">Easy to book your stay with us</a></li>
+					<li><a href="#">24-hour customer service</a></li>
 				</ul>
 			</div>
 			<div class="col-md-4 welcome-middle">
 				<ul>
-					<li><a href="#">Lorem Ipsum is not simply random text.</a></li>
-					<li><a href="#">There are many variations of passages.</a></li>
-					<li><a href="#">The standard chunk of Lorem Ipsum.</a></li>
+					<li><a href="#">Within 5 miles of all the major stores</a></li>
+					<li><a href="#">Hi-tech amenities</a></li>
+					<li><a href="#">Express room services</a></li>
 				</ul>
 			</div>
 			<div class="col-md-4 welcome-right">
 				<ul>
-					<li><a href="#">Lorem Ipsum is not simply random text.</a></li>
-					<li><a href="#">There are many variations of passages.</a></li>
-					<li><a href="#">The standard chunk of Lorem Ipsum.</a></li>
+					<li><a href="#">Affordable prices that fall in your budget</a></li>
+					<li><a href="#">100% customer satisfaction guarantee</a></li>
+					<li><a href="#">Value for your money</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-		doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
-		veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+		<p>Comet Inn is rated the best hotel chain consecutivelt for the seventh time in the 2017 US Rating. Also rated as #1 hotel in TripAdvisor. </p>
 	</div>
 </div>
 <!-- //welcome -->
@@ -266,9 +264,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="services-bottom-grd-right">
-						<h4>dolorem eum fugia</h4>
-						<p>To take a trivial example, which of us ever undertakes laborious 
-						physical exercise, except to obtain.</p>
+						<h4>24-hr customer service</h4>
+						<p>We provide 24-hr customer service for our clients and customers. Contact us through phone or email.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -281,9 +278,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="services-bottom-grd-right">
-						<h4>dolorem eum fugia</h4>
-						<p>To take a trivial example, which of us ever undertakes laborious 
-						physical exercise, except to obtain.</p>
+						<h4>User Account Setup</h4>
+						<p>This website was developed to provide simple and quick account setup for our customers.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -296,9 +292,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="services-bottom-grd-right">
-						<h4>dolorem eum fugia</h4>
-						<p>To take a trivial example, which of us ever undertakes laborious 
-						physical exercise, except to obtain.</p>
+						<h4>5-star services</h4>
+						<p>This is a 5-star hotel and we provide all the luxuries you need without putting a hole in your wallet.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -311,9 +306,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="services-bottom-grd-right">
-						<h4>dolorem eum fugia</h4>
-						<p>To take a trivial example, which of us ever undertakes laborious 
-						physical exercise, except to obtain.</p>
+						<h4>Home away from home</h4>
+						<p>We make our customers feel at home by providing a comfortable stay with us.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -326,9 +320,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="services-bottom-grd-right">
-						<h4>dolorem eum fugia</h4>
-						<p>To take a trivial example, which of us ever undertakes laborious 
-						physical exercise, except to obtain.</p>
+						<h4>Maintenance</h4>
+						<p>We update our website everyday with new offers and discounts for our loyal customers.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -341,9 +334,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="services-bottom-grd-right">
-						<h4>dolorem eum fugia</h4>
-						<p>To take a trivial example, which of us ever undertakes laborious 
-						physical exercise, except to obtain.</p>
+						<h4>Locations</h4>
+						<p>Comet Inn is available in 150 locations all over the US.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -479,7 +471,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
-					<li><a href="typography.html">Services</a></li>						
 					<li><a href="booking.html">Booking</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
