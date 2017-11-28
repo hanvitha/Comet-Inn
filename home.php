@@ -158,7 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<figure class="effect-bubba">
 							<img src="images/4.jpg" alt=""/>
 							<figcaption>
-								<h4>CLASSIC HOTEL</h4>
+								<h4>Comet Inn</h4>
 								<p>In officiis debitis aut rerum tincidunt labore dolore magna</p>																
 							</figcaption>			
 					</figure>
@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<figure class="effect-bubba">
 							<img src="images/6.jpg" alt=""/>
 							<figcaption>
-								<h4>CLASSIC HOTEL</h4>
+								<h4>Comet Inn</h4>
 								<p>In sit amet sapien eros Integerore et dolore magna aliqua. In sit tincidunt magna aliqua rerum tincidunt</p>														
 							</figcaption>			
 					</figure>
@@ -180,7 +180,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<figure class="effect-bubba">
 							<img src="images/5.jpg" alt=""/>
 							<figcaption>
-								<h4>CLASSIC HOTEL</h4>
+								<h4>Comet Inn</h4>
 								<p>In sit amet sapien eros Integerore et dolore magna aliqua. In sit tincidunt magna aliqua rerum tincidunt</p>																
 							</figcaption>			
 					</figure>
@@ -361,7 +361,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 							<a href="images/aaa.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/aaa.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -372,7 +372,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 						   <a href="images/bbb.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/bbb.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -383,7 +383,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 							<a href="images/ccc.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/ccc.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -394,7 +394,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 						   <a href="images/ddd.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/ddd.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -405,7 +405,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 <div class="view view-fifth">
 							<a href="images/eee.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/eee.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -416,7 +416,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 							<a href="images/bbb.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/bbb.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -427,7 +427,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 							<a href="images/ggg.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/ggg.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -439,7 +439,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 							<a href="images/bbb.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/bbb.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -450,7 +450,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="view view-fifth">
 						   <a href="images/aaa.jpg" class="b-link-stripe b-animate-go  thickbox"  title="Image Title"><img src="images/aaa.jpg" alt="" class="img-responsive">
 								<div class="mask">
-									<h4>CLASSIC HOTEL</h4>
+									<h4>Comet Inn</h4>
 									<p>A wonderful serenity has taken possession of my entire soul.</p>
 									<span>More</span>
 								</div>
@@ -496,13 +496,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>GET IN TOUCH</h3>
 				<ul>
-					<li>Ola-ola street jump,</li>
-					<li>260-14 City, Country</li>
-					<li>+62 000-0000-00</li>
+					<li>6314.001, WPL,</li>
+					<li>University of Texas Dallas</li>
+					<li></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Comet Inn</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>

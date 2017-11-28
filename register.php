@@ -5,11 +5,11 @@ require_once('config.php');
 <!DOCTYPE html>
 <html>
 <head>
-<title>Classic Hotel a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Classic Hotel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Comet Inn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -91,13 +91,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>GET IN TOUCH</h3>
 				<ul>
-					<li>Ola-ola street jump,</li>
-					<li>260-14 City, Country</li>
-					<li>+62 000-0000-00</li>
+					<li>6314.001, WPL,</li>
+					<li>University of Texas Dallas</li>
+					<li></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Comet Inn</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>
@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- copy -->
 <div class="copy-right">
 	<div class="container">
-			<div> &copy; 2015 Classic Hotel. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></div>
+			<div> &copy; 2015 Comet Inn. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></div>
 	</div>
 </div>
 <!-- //copy -->

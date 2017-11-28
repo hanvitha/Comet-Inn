@@ -232,13 +232,13 @@ if($_GET["src"] === "wishlist"){
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>GET IN TOUCH</h3>
 				<ul>
-					<li>Ola-ola street jump,</li>
-					<li>260-14 City, Country</li>
-					<li>+62 000-0000-00</li>
+					<li>6314.001, WPL,</li>
+					<li>University of Texas Dallas</li>
+					<li></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Comet Inn</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>

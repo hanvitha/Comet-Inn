@@ -7,11 +7,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Classic Hotel a Hotel Category Flat Bootstrap Responsive Website Template | About :: w3layouts</title>
+<title>Comet Inn a Hotel Category Flat Bootstrap Responsive Website Template | About :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Classic Hotel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Comet Inn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -95,8 +95,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-1"></div>
 									<div class="ch-info-back">
-										<h4>VICTORIA</h4>
-										<p>Praesent nunc egestas eget elem</p>
+										<h4>Prathyusha</h4>
+										<p>Developer</p>
 									</div>	
 								</div>
 							</div>
@@ -108,8 +108,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-2"></div>
 									<div class="ch-info-back">
-										<h4>WILLIAM</h4>
-										<p>Praesent nunc egestas eget elem</p>
+										<h4>Hanvitha</h4>
+										<p>Developer</p>
 									</div>
 								</div>
 							</div>
@@ -121,21 +121,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-3"></div>
 									<div class="ch-info-back">
-										<h4>THOMPSON</h4>
-										<p>Praesent nunc egestas eget elem</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="ch-item ch-img-4">
-							<div class="ch-info-wrap">
-								<div class="ch-info">
-									<div class="ch-info-front ch-img-4"></div>
-									<div class="ch-info-back">
-										<h4>JOHN DOE</h4>
-										<p>Praesent nunc egestas eget elem</p>
+										<h4>Pavan</h4>
+										<p>Developer</p>
 									</div>
 								</div>
 							</div>
@@ -170,13 +157,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 ftr_navi ftr">
 				<h3>GET IN TOUCH</h3>
 				<ul>
-					<li>Ola-ola street jump,</li>
-					<li>260-14 City, Country</li>
-					<li>+62 000-0000-00</li>
+					<li>6314.001, WPL,</li>
+					<li>University of Texas Dallas</li>
+					<li></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr-logo">
-				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Classic Hotel</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Comet Inn</a>
 				<ul>
 					<li><a href="#" class="f1"> </a></li>
 					<li><a href="#" class="f2"> </a></li>
@@ -190,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- copy -->
 <div class="copy-right">
 	<div class="container">
-			<p> &copy; 2015 Classic Hotel. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+			<p> &copy; 2015 Comet Inn. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
 	</div>
 </div>
 <!-- //copy -->
