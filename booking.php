@@ -109,11 +109,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 $room_id = $row['room_id']; ?>
                                 <div class="hotel-rooms">
                                     <div class="hotel-left">
-                                        <a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
+                                        <span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?>
                                         <p><?php echo $row['room_desc'] ?></p>
                                         <div class="hotel-left-grids">
                                             <div class="hotel-left-one">
-                                                <a href="single.html"><img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" /></a>
+                                            <img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" />
                                             </div>
                                             
                                             <div class="clearfix"></div>
@@ -141,11 +141,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             $wishlist_id = $row['wishlist_id'];?>
                             <div class="hotel-rooms">
                                 <div class="hotel-left">
-                                    <a href="single.php"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?></a>
+                                    <span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $row['room_type'] ?>
                                     <p><?php echo $row['room_desc'] ?></p>
                                     <div class="hotel-left-grids">
                                         <div class="hotel-left-one">
-                                            <a href="single.html"><img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" /></a>
+                                            <img src="<?php echo $row['image_url'] ?>" alt="<?php echo $row['room_desc'] ?>" />
                                         
                                         </div>
                                     </div>
