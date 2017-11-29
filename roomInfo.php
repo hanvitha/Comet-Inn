@@ -67,7 +67,7 @@
                         for($i=0; $i< count($rooms); $i++){?>
                             <div class="hotel-rooms">
                                 <div class="hotel-left">
-                                    <a href="roomUpdate.php?city=<?php echo $_GET['city']?>&roomId=<?php echo $rooms[$i]["room_id"]?>"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span></a>
+                                    <a href="roomUpdate.php?city=<?php echo $_GET['city']?>&roomId=<?php echo $rooms[$i]["room_id"]?>"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><?php echo $rooms[$i]['room_type']?></a>
                                     <p><?php echo $rooms[$i]["room_desc"] ?></p>
                                     <div class="hotel-left-grids">
                                         <div class="hotel-left-one">
@@ -75,9 +75,7 @@
                                         </div>
                                         <div class="hotel-left-two">
                                             <div class="rating text-left">
-                                                <?php for($count = 0; $count < $rooms[$i]["customer_rating"]; $count++){?>
-                                                <span>☆</span>
-                                                <?php } ?>
+                                                <span><img alt="Customer Rating" src ="images/st<?php echo $rooms[$i]['customer_rating']; ?>.png"</span>
                                             </div>
                                             <p>
                                                 <i>Features:</i>

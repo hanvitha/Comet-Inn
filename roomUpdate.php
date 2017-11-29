@@ -63,13 +63,7 @@ if(isset($_POST['submit_image'])){
                         <h4>Price($)</h4>         			
                         <input type="number" name="price" value="<?php echo $rooms[0]["price"] ?>" placeholder="Price" required>
                         <h4>Room Type</h4>      
-                        <div class="sort-by">
-                            <select class="sel" id="roomType" name="roomType">
-                                <option value="">Select Room Type</option>
-                                <option value="Single Bed">Single Bed</option>
-                                <option value="Double Bed">Double Bed</option>
-                            </select>
-                        </div><br/><br/>
+                        <input type="text" name="roomType" value="<?php echo $rooms[0]["room_type"] ?>" placeholder="Room Type" required>
                         <h4>Max occupancy</h4>         			
                         <input type="number" name="max_occupancy" value="<?php echo $rooms[0]["max_occupancy"] ?>" placeholder="Max Occupancy" required>
                         <h4>Features</h4>         			
