@@ -86,7 +86,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         $name = $row['name'];
         $phone = $row['phone'];
         $email = $row['email_id'];
-        $password = $row['password'];
        
     }
     
@@ -98,11 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<td>Email ID:</td>
     <td> <input type="email" name="email" id="email" value="<?php echo $email; ?>" /></td>
     </tr>
-    <tr>
-	<td>Password:</td>
-    <td> <input type="password" name="password" id="password" value="<?php echo $password; ?>" readonly/>
-    <span id="result"></span></td>
-    </tr>
+   
     <tr>
 	<td>Full Name:</td>
     <td><input type="text" name="fname" id="fname" value="<?php echo $name; ?>" /></td>
