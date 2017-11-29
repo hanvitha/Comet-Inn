@@ -114,7 +114,7 @@ if($_GET["src"] === "wishlist"){
 							<p>Special Offer</p>	
 						</div>
 						<div class="sp-bor-btn text-right">
-							<h4 name="price"><span>$<?php echo $rooms[0]["price"]+rand(2, 100)?></span> $<?php echo $rooms[0]["price"]?></h4>
+							<h4 name="price">$<?php echo $rooms[0]["price"]?></h4>
 							<p class="best-pri">Best price</p>
 							<p class="best-pri"><b style="margin-right: 20px;">Service Charge(15%):</b>&nbsp;$<?php echo $rooms[0]["price"]*.15?></p>
 							<p class="best-pri"><b style="margin-right: 12px;">Total Price:</b>&nbsp;$<?php echo $rooms[0]["price"]+$rooms[0]["price"]*.15?></p>

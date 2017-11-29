@@ -3478,8 +3478,8 @@ font-weight:bold;
 .responstable th {
   display: none;
   border: 1px solid #fff;
-  background-color: #167f92;
-  color: #fff;
+  background-color: #ecca69;
+  color: rgb(235, 22, 15);
   padding: 1em;
 }
 
@@ -3497,7 +3497,7 @@ font-weight:bold;
 
 .responstable th,
 .responstable td {
-  text-align: left;
+  text-align: center;
   margin: 0.5em 1em;
 }
 @media (min-width: 480px) {
