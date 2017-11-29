@@ -54,7 +54,7 @@ if(!isset($_SESSION["sess_userid"])){
                                 <?php
                             }
                         }else{
-                            echo "No users yet!!!";
+                            echo "No users.";
                         }
                    }catch(PDOException $ex){
                         echo $ex->getMessage(); 

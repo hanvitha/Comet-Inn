@@ -113,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										die("Connection failed: " . $db->connect_error);
 									} 
 									else echo "Connected successfully";
-									$query = "SELECT * FROM hotel";
+									$query = "SELECT * FROM hotel where status=1";
 									$result = $db->query($query);	
 									while ($row = $result->fetch_assoc()) {
 										echo '<option value='.$row["hotel_id"].'>'.$row["city_name"].'</option>';					

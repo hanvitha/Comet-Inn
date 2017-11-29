@@ -39,13 +39,8 @@
                         <h4>Price($)</h4>         			
                         <input type="text" name="price" placeholder="Price" required>
                         <h4>Room Type</h4>      
-                        <div class="sort-by">
-                            <select class="sel" id="roomType" name="roomType">
-                                <option value="">Select Room Type</option>
-                                <option value="Single Bed">Single Bed</option>
-                                <option value="Double Bed">Double Bed</option>
-                            </select>
-                        </div><br/><br/>
+                        <input type="text" name="roomType" placeholder="Room Type" required>
+                        <br/><br/>
                         <h4>Max occupancy</h4>         			
                         <input type="number" name="max_occupancy" placeholder="Max Occupancy" required>
                         <h4>Features</h4>         			

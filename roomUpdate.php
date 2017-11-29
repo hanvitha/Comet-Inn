@@ -57,7 +57,7 @@ if(isset($_POST['submit_image'])){
                             </div>
                         </div>
                     </form>
-                    <form method="POST" action="roomUpdate.php?id=<?php echo $rooms[0]["room_id"]?>" name="custInfo" class="edit">
+                    <form method="POST" action="roomUpdate.php?&city=<?php echo $_GET['city']?>&id=<?php echo $rooms[0]["room_id"]?>" name="custInfo" class="edit">
                         <h4>Description</h4>         			
                         <input type="text" name="desc" value="<?php echo $rooms[0]["room_desc"] ?>" placeholder="Description" required>
                         <h4>Price($)</h4>         			
@@ -142,7 +142,8 @@ if(isset($_POST['submit_image'])){
                 $sql = "INSERT INTO room_features VALUES ($id, $featuresList[$featureNo])";
                 $db->exec($sql);
             }
-            echo '<script type="text/javascript">location.href = "roomInfo.php";</script>';
+            $city= $_GET['city'];
+            echo '<script type="text/javascript">location.href = "roomInfo.php?search=search&city='.$city.'";</script>';
             //header("Location:roomInfo.php");
         }catch(PDOException $ex){
             echo "<script type='text/javascript'>alert('$ex->getMessage();');</script>"; 

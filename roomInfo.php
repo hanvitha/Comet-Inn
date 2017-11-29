@@ -67,7 +67,7 @@
                         for($i=0; $i< count($rooms); $i++){?>
                             <div class="hotel-rooms">
                                 <div class="hotel-left">
-                                    <a href="roomUpdate.php?roomId=<?php echo $rooms[$i]["room_id"]?>"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span></a>
+                                    <a href="roomUpdate.php?city=<?php echo $_GET['city']?>&roomId=<?php echo $rooms[$i]["room_id"]?>"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span></a>
                                     <p><?php echo $rooms[$i]["room_desc"] ?></p>
                                     <div class="hotel-left-grids">
                                         <div class="hotel-left-one">
@@ -98,8 +98,8 @@
                                 <div class="hotel-right text-right">
                                     <h4>$<?php echo $rooms[$i]["price"] ?></h4>
                                     <p>Best price</p>
-                                    <a class="update" href="roomUpdate.php?roomId=<?php echo $rooms[$i]["room_id"]?>">Update</a>
-                                    <a class="delete" href="roomInfo.php?deleteId=<?php echo $rooms[$i]['room_id']?>">Delete</a>
+                                    <a class="update" href="roomUpdate.php?city=<?php echo $_GET['city']?>&roomId=<?php echo $rooms[$i]["room_id"]?>">Update</a>
+                                    <a class="delete" href="roomInfo.php?city=<?php echo $_GET['city']?>&search=search&deleteId=<?php echo $rooms[$i]['room_id']?>">Delete</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

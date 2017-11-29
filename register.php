@@ -178,12 +178,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             {
                 echo "<script type='text/javascript'>alert('Successfully registered with Comet Inn!');</script>"; 
                 mysqli_close($con);
-                
-                header("Location: index.php");
+                echo '<script type="text/javascript">location.href = "index.php";</script>';
+                //header("Location: index.php");
             }
             else
             {
-                echo "<script type='text/javascript'>alert('Oops! Something went wrong. Please try again !');</script>";
+                echo "<script type='text/javascript'>ale\rt('Oops! Something went wrong. Please try again !');</script>";
                 mysqli_close($con);
                 unset($_POST);
                         

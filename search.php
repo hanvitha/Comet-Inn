@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="search-hotel">
 					<h3 class="sear-head">Name contains</h3>
 					<form method="POST">
-						<input type="text" name="filter_text" value="Hotel name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Hotel name...';}" required="">
+						<input type="text" style="color:black !important;" name="filter_text" value="Hotel name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Hotel name...';}" required="">
 						<input type="submit" name="name_filter" value=" ">
 					</form>
 				</div>
@@ -57,8 +57,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class="item1"><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>Features</a>
 						<ul>
 							<li class="subitem1"><a href="search.php?page=1&feature=1">Roll-in shower </a></li>
-							<li class="subitem2"><a href="search.php?page=1&feature=2">Comfortable bathroom</a></li>
+							<li class="subitem2"><a href="search.php?page=1&feature=2">Free infant/kid's bed</a></li>
 							<li class="subitem3"><a href="search.php?page=1&feature=3">WI-FI facility</a></li>
+							<li class="subitem3"><a href="search.php?page=1&feature=4">Gym</a></li>
 						</ul>
 					</li>
 				</ul>

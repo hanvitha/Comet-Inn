@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="booking.php" data-hover="BOOKING">BOOKING</a></li>
                         <li><a href="contact.php" data-hover="CONTACT">CONTACT</a></li>
                         <?php
-                        if(!$user && isset($_SESSION["sess_userid"])){?>
+                        if(isset($user) && !$user && isset($_SESSION["sess_userid"])){?>
                         <li>
                             <div class="dropdown1">
                                 <div class="dropbtn" onclick="myFunction()">ADMIN
@@ -77,14 +77,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         }
                         ?>
                         <?php
-                        if($user && isset($_SESSION["sess_userid"])){?>
+                        if(isset($user) && $user && isset($_SESSION["sess_userid"])){?>
                         <li>
                             <div class="dropdown1">
-                                <div class="dropbtn" onclick="myFunction()"><?php echo $_SESSION["sess_name"] ?>
+                                <div class="dropbtn" style="text-transform: uppercase;" onclick="myFunction()"><?php echo $_SESSION["sess_name"] ?>
                                 </div>
                                 <div class="dropdown-content" id="myDropdown">
                                     <a href="editProfile.php">Edit Profile</a>
-                                    <a href="bookings.php">View Bookings</a>
+                                    <a href="wishlist.php">View Wishlist</a>
                                     <a href="logout.php">Logout</a>
                                 </div>
                             </div>

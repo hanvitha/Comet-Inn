@@ -11,7 +11,7 @@ if(isset($_GET["roomId"])){
 	$query = $db->prepare("SELECT * FROM room where room_id=$roomId and status=1");
 	$query->execute();
 	$rooms=$query->fetchAll();
-	$query = $db->prepare("SELECT FROM room_features rf inner join features f on rf.feature_id= f.feature_id where room_id=$roomId");	
+	$query = $db->prepare("SELECT feature_name FROM room_features rf inner join features f on rf.feature_id= f.feature_id where room_id=$roomId");	
 	$query->execute();
 	$featuresSelected=$query->fetchAll();
 }
