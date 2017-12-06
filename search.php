@@ -152,18 +152,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								"SELECT * from room r
 								join room_features f1
 								on r.room_id = f1.room_id and f1.feature_id='$feature_id'
-								where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+								where hotel_id='$hotel_id' and max_occupancy >= $occupancy  and r.status =1 and r.room_id NOT IN 
 								(select b.room_id from bookings b
-								where r.room_id = b.room_id and 
+								where r.room_id = b.room_id and r.status =1 and
 								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
 								('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
 								and r.room_type like '%$name_filter%' limit $start, $end;";						
 						}else if($name_filter_flag){
 							$query = 
 								"SELECT * from room r
-								where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+								where hotel_id='$hotel_id' and max_occupancy >= $occupancy  and r.status =1 and r.room_id NOT IN 
 								(select b.room_id from bookings b
-								where r.room_id = b.room_id and 
+								where r.room_id = b.room_id and
 								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
 								('$check_out' >= b.checkin and '$check_out' <= b.checkout )))
 								and r.room_type like '%$name_filter%' limit $start, $end;;";
@@ -173,15 +173,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							$query = "SELECT * from room r 
 								join room_features f1
 								on r.room_id = f1.room_id and f1.feature_id='$feature_id'
-								where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+								where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.status =1 and r.room_id NOT IN 
 								(select b.room_id from bookings b
-								where r.room_id = b.room_id and 
+								where r.room_id = b.room_id  and
 								(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
 								('$check_out' >= b.checkin and '$check_out' <= b.checkout ))) 
 								limit $start, $end;";
 						}else{
 							$query = "SELECT * from room r
-							where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+							where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.status =1 and r.room_id NOT IN 
 							(select b.room_id from bookings b
 							where r.room_id = b.room_id and 
 							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -271,7 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"SELECT * from room r
 							join room_features f1
 							on r.room_id = f1.room_id and f1.feature_id='$feature_id'
-							where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+							where hotel_id='$hotel_id' and max_occupancy >= $occupancy  and r.status =1 and r.room_id NOT IN 
 							(select b.room_id from bookings b
 							where r.room_id = b.room_id and 
 							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -280,7 +280,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					}else if($name_filter_flag){
 						$query = 
 							"SELECT * from room r
-							where hotel_id='$hotel_id' and max_occupancy >= $occupancy and r.room_id NOT IN 
+							where hotel_id='$hotel_id' and max_occupancy >= $occupancy  and r.status =1 and r.room_id NOT IN 
 							(select b.room_id from bookings b
 							where r.room_id = b.room_id and 
 							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -291,14 +291,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						$query = "SELECT * from room r 
 							join room_features f1
 							on r.room_id = f1.room_id and f1.feature_id='$feature_id'
-							where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+							where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy  and r.status =1 and r.room_id NOT IN 
 							(select b.room_id from bookings b
 							where r.room_id = b.room_id and 
 							(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
 							('$check_out' >= b.checkin and '$check_out' <= b.checkout )));";
 					}else{
 						$query = "SELECT * from room r
-						where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy and r.room_id NOT IN 
+						where hotel_id='$hotel_id' and r.max_occupancy >= $occupancy  and r.status =1 and r.room_id NOT IN 
 						(select b.room_id from bookings b
 						where r.room_id = b.room_id and 
 						(('$check_in' >= b.checkin and '$check_in' <= b.checkout ) or 
@@ -313,7 +313,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      ?>
                      <li><a href="search.php?page=<?php echo $currentPage - 1 ?>" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
                      <?php
-                     while($i < $noOfPages){?>
+                     while($i <= $noOfPages){?>
                         <li><a href="search.php?page=<?php echo $i+1 ?>"><?php echo $i+1 ?></a></li>
                      <?php
                         $i++;

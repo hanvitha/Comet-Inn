@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
                     $query = "select count(*) as count from room r 
                         join wishlist w
-                        on r.room_id = w.room_id and w.user_id ='$user_id';";						
+                        on r.room_id = w.room_id and r.status =1 and w.user_id ='$user_id';";						
                 
                     // Find out how many items are in the table
                     
@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
                     $query = "select * from room r 
                                 join wishlist w
-                                    on r.room_id = w.room_id and w.user_id ='$user_id'
+                                    on r.room_id = w.room_id and r.status =1 and w.user_id ='$user_id'
                                         LIMIT $limit OFFSET $offset;";	
                     
                     $result1 = $db->query($query);

@@ -19,7 +19,7 @@ if(!isset($_SESSION["sess_userid"])){
                         //$id = $db->quote($id);
                         $updateQuery =  $db->prepare("UPDATE user SET status=0 WHERE user_id=$id");  
                         $result = $updateQuery->execute();
-                        header("Location: adminmenu.php");
+                        //header("Location: adminmenu.php");
                     }
                     try{
                         $db = new PDO("mysql:dbname=".DBNAME.";host=".DBHOST, DBUSER, DBPASS);  
